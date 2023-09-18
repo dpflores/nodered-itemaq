@@ -3922,7 +3922,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": true,
-        "complete": "payload",
+        "complete": "topic",
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
