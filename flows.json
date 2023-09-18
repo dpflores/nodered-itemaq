@@ -3897,7 +3897,7 @@
         "z": "d91ac3d282c069d0",
         "g": "2075d3e5148f3b9a",
         "name": "function 103",
-        "func": "\nvar gd = global.get('gateway_data');\n\n// var fecha = gd.timestamp;\nvar fecha = new Date().toString();\nvar gps_lat = gd.data.gps.latitude;\nvar gps_lon = gd.data.gps.longitude;\nvar gps_alt = gd.data.gps.altitude;\nvar speed = gd.data.gps.speed\nvar angle = gd.data.jd2120.angle;\nvar state = gd.data.sensor_estado.state;\n\nmsg.payload = \"Save\"\nmsg.topic = \"INSERT INTO `data` (`fecha`, `angle`, `gps_lat`, `gps_lon`, `speed`, `state`) VALUES ('\" + fecha + \"',\" + angle + \",\" + gps_lat + \",\" + gps_lon + \",\" + speed + \", '\"+ state + \"');\";\nreturn msg;",
+        "func": "\nvar gd = global.get('gateway_data');\n\n// var fecha = gd.timestamp;\nvar fecha = new Date().toISOString();\nvar gps_lat = gd.data.gps.latitude;\nvar gps_lon = gd.data.gps.longitude;\nvar gps_alt = gd.data.gps.altitude;\nvar speed = gd.data.gps.speed\nvar angle = gd.data.jd2120.angle;\nvar state = gd.data.sensor_estado.state;\n\nmsg.payload = \"Save\"\nmsg.topic = \"INSERT INTO `data` (`fecha`, `angle`, `gps_lat`, `gps_lon`, `speed`, `state`) VALUES ('\" + fecha + \"',\" + angle + \",\" + gps_lat + \",\" + gps_lon + \",\" + speed + \", '\"+ state + \"');\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3939,6 +3939,29 @@
         "name": "",
         "x": 580,
         "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0d640d16d7d2fe8",
+        "type": "moment",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "America/Lima",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-GB",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "America/Lima",
+        "x": 20,
+        "y": 780,
         "wires": [
             []
         ]
