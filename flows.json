@@ -42,7 +42,7 @@
     {
         "id": "d91ac3d282c069d0",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "INIT",
         "disabled": false,
         "info": "",
         "env": []
@@ -10956,23 +10956,6 @@
         ]
     },
     {
-        "id": "e39cc9e1ef120543",
-        "type": "debug",
-        "z": "a1b1f2bdd5b2d11d",
-        "name": "debug 117",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 890,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "e5f3d1aaf8ad8cbd",
         "type": "json",
         "z": "a1b1f2bdd5b2d11d",
@@ -10984,7 +10967,6 @@
         "y": 280,
         "wires": [
             [
-                "e39cc9e1ef120543",
                 "b03bceab3a540301",
                 "266e264aaf1f22f8"
             ]
@@ -11007,7 +10989,6 @@
             [
                 "91cfce2992b642bf",
                 "33cd24336cbfa1fb",
-                "33704dab6e7218e3",
                 "15263b2027fcf74d"
             ]
         ]
@@ -11027,8 +11008,7 @@
         "y": 280,
         "wires": [
             [
-                "91cfce2992b642bf",
-                "e325f33929f61f96"
+                "91cfce2992b642bf"
             ]
         ]
     },
@@ -11045,89 +11025,9 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1150,
-        "y": 120,
+        "x": 1310,
+        "y": 180,
         "wires": []
-    },
-    {
-        "id": "40bd5febb0af1645",
-        "type": "function",
-        "z": "a1b1f2bdd5b2d11d",
-        "name": "function 100",
-        "func": "\nvar data_json = {\n};\n\n\nglobal.set('data_json', data_json);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3a10c75cb0ee5622",
-        "type": "inject",
-        "z": "a1b1f2bdd5b2d11d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 630,
-        "y": 80,
-        "wires": [
-            [
-                "40bd5febb0af1645"
-            ]
-        ]
-    },
-    {
-        "id": "33704dab6e7218e3",
-        "type": "function",
-        "z": "a1b1f2bdd5b2d11d",
-        "name": "function 101",
-        "func": "var data_json = global.get('data_json');\n\ndata_json.x_angle = msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1370,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e325f33929f61f96",
-        "type": "function",
-        "z": "a1b1f2bdd5b2d11d",
-        "name": "function 102",
-        "func": "var data_json = global.get('data_json');\n\ndata_json.y_angle = msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1370,
-        "y": 280,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "a0c062cb0899e14b",
@@ -11181,7 +11081,7 @@
         "type": "function",
         "z": "a1b1f2bdd5b2d11d",
         "name": "function 103",
-        "func": "var data_json = global.get('data_json');\n\nmsg.payload = data_json;\n\nreturn msg;",
+        "func": "var data_json = global.get('gateway_data');\n\nmsg.payload = data_json;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11209,8 +11109,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1230,
-        "y": 560,
+        "x": 1170,
+        "y": 580,
         "wires": []
     },
     {
@@ -11232,8 +11132,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1490,
-        "y": 160,
+        "x": 1410,
+        "y": 240,
         "wires": [
             []
         ]
