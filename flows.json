@@ -4135,6 +4135,85 @@
         ]
     },
     {
+        "id": "49948d8554edb4e3",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 660,
+        "y": 820,
+        "wires": [
+            [
+                "0229b3b86d408205"
+            ]
+        ]
+    },
+    {
+        "id": "70036d189377757b",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "\nmsg.topic = \"SELECT * FROM data2 LIMIT 10\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 820,
+        "wires": [
+            [
+                "49948d8554edb4e3"
+            ]
+        ]
+    },
+    {
+        "id": "15391147988a1a32",
+        "type": "inject",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 820,
+        "wires": [
+            [
+                "70036d189377757b"
+            ]
+        ]
+    },
+    {
+        "id": "0229b3b86d408205",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "msg.payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 873.3333129882812,
+        "y": 778.8888549804688,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "62e4bcbf75a77da1",
         "type": "debug",
         "z": "a1b1f2bdd5b2d11d",
