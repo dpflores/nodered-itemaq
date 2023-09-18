@@ -90,13 +90,13 @@
         },
         "nodes": [
             "7cbe20e1ad19d0b3",
-            "cdaefee13db19423",
             "8bedb70cdba32459",
-            "fd17bf43461735aa"
+            "fd17bf43461735aa",
+            "d814de64e9b17a54"
         ],
         "x": 74,
         "y": 419,
-        "w": 612,
+        "w": 632,
         "h": 142
     },
     {
@@ -3884,31 +3884,12 @@
         ]
     },
     {
-        "id": "cdaefee13db19423",
-        "type": "mqtt out",
-        "z": "d91ac3d282c069d0",
-        "g": "2075d3e5148f3b9a",
-        "name": "",
-        "topic": "data/itemaq",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "8d53d2f17df7fbc4",
-        "x": 590,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "8bedb70cdba32459",
         "type": "function",
         "z": "d91ac3d282c069d0",
         "g": "2075d3e5148f3b9a",
         "name": "function 103",
-        "func": "var data_json = global.get('gateway_data');\ndata_json.timestamp = msg.payload;\nmsg.payload = data_json;\n\nreturn msg;",
+        "func": "\nvar data_json = global.get('data_json');\nvar gateway_data_json = global.get('gateway_data_json');\n\nfunction isFechaEnRango() {\n    // Obtener la fecha actual\n    var fechaActual = new Date();\n\n    // Verificar si el día actual está dentro del rango de días de trabajo\n    var diaActual = fechaActual.getDay(); // 0 (Domingo) - 6 (Sábado)\n    if (data_json.dias_de_trabajo_list[diaActual] === 0) {\n        return false; // El día actual no está dentro del rango de días de trabajo\n    }\n\n    // Verificar si la hora actual está dentro del rango de horas de trabajo\n    var horaActual = fechaActual.getHours();\n    if (horaActual < data_json.horario_inicio || horaActual >= data_json.horario_fin) {\n        return false; // La hora actual no está dentro del rango de horas de trabajo\n    }\n\n    // La fecha actual está dentro del rango de días y horas de trabajo\n    return true;\n}\n\n\nif (isFechaEnRango()) {\n    msg.payload = \"La fecha actual está dentro del rango de días y horas de trabajo\";\n    if (gateway_data_json.flag == \"null\") {\n        msg.topic = \"INSERT INTO `data` (`velocidad`, `carga`, `gps_lat`, `gps_lon`, `estado`) VALUES ('\" + 0 + \"','\" + 0 + \"','\" + 0 + \"','\" + 0 + \"','no uso');\";\n        gateway_data_json.estado = \"no uso\";\n    }\n    else {\n        msg.topic = \"INSERT INTO `data` (`velocidad`, `carga`, `gps_lat`, `gps_lon`, `estado`) VALUES ('\" + gateway_data_json.gps_speed + \"','\" + gateway_data_json.carga + \"','\" + gateway_data_json.gps_lat + \"','\" + gateway_data_json.gps_lon + \"','\" + gateway_data_json.estado + \"');\";\n        gateway_data_json.flag = \"null\";\n    }\n    return msg;\n}\nelse {\n    msg.payload = \"La fecha actual NO está dentro del rango de días y horas de trabajo\";\n    return msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3918,7 +3899,6 @@
         "y": 520,
         "wires": [
             [
-                "cdaefee13db19423",
                 "fd17bf43461735aa"
             ]
         ]
@@ -3940,6 +3920,19 @@
         "x": 570,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "d814de64e9b17a54",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "g": "2075d3e5148f3b9a",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 610,
+        "y": 520,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
