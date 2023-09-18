@@ -11939,7 +11939,8 @@
         "y": 180,
         "wires": [
             [
-                "2b99940add736053"
+                "2b99940add736053",
+                "21af6d36518c9471"
             ]
         ]
     },
@@ -11996,6 +11997,50 @@
         "statusType": "auto",
         "x": 890,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "21af6d36518c9471",
+        "type": "change",
+        "z": "7c7f5941531dd155",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "gateway_data",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "dfed1b71144071b6"
+            ]
+        ]
+    },
+    {
+        "id": "dfed1b71144071b6",
+        "type": "debug",
+        "z": "7c7f5941531dd155",
+        "name": "debug 119",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 260,
         "wires": []
     }
 ]
