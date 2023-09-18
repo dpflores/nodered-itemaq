@@ -11415,7 +11415,6 @@
         "y": 320,
         "wires": [
             [
-                "5b65fd3eaa023232",
                 "e476710c2d6f2857"
             ]
         ]
@@ -11435,7 +11434,6 @@
         "y": 260,
         "wires": [
             [
-                "5a62c122689e64ee",
                 "170b8b8963c41720",
                 "1a422330e071023e"
             ]
@@ -11456,7 +11454,6 @@
         "y": 380,
         "wires": [
             [
-                "4ecf06f2e06e7bf8",
                 "0a51973433ed0faf"
             ]
         ]
@@ -11478,57 +11475,6 @@
             [
                 "9745472ffcfaeb56"
             ]
-        ]
-    },
-    {
-        "id": "5a62c122689e64ee",
-        "type": "function",
-        "z": "87fe75fba6b00d60",
-        "name": "function 94",
-        "func": "var data_json = global.get('data_json');\n\n\ndata_json.latitud = msg.payload;\n\nmsg.payload = data_json;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5b65fd3eaa023232",
-        "type": "function",
-        "z": "87fe75fba6b00d60",
-        "name": "function 95",
-        "func": "var data_json = global.get('data_json');\n\n\ndata_json.longitud = msg.payload;\n\nmsg.payload = data_json;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4ecf06f2e06e7bf8",
-        "type": "function",
-        "z": "87fe75fba6b00d60",
-        "name": "function 96",
-        "func": "var data_json = global.get('data_json');\n\n\ndata_json.altitud = msg.payload;\n\nmsg.payload = data_json;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 380,
-        "wires": [
-            []
         ]
     },
     {
@@ -11708,8 +11654,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1520,
-        "y": 160,
+        "x": 1480,
+        "y": 260,
         "wires": [
             []
         ]
@@ -11733,8 +11679,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1610,
-        "y": 280,
+        "x": 1490,
+        "y": 320,
         "wires": [
             []
         ]
@@ -11758,8 +11704,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
-        "y": 360,
+        "x": 1480,
+        "y": 380,
         "wires": [
             []
         ]
