@@ -3963,7 +3963,7 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data LIMIT 1\";\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data LIMIT 10\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
