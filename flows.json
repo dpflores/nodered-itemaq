@@ -4109,10 +4109,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "topic",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
+        "x": 800,
         "y": 340,
         "wires": []
     },
