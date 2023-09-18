@@ -3840,7 +3840,7 @@
             [
                 "5c7e777abb066136",
                 "137308aff7f5aabf",
-                "121f11e8ca291a0e"
+                "bcd67702c395a8fb"
             ]
         ]
     },
@@ -4117,6 +4117,22 @@
         "x": 800,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "bcd67702c395a8fb",
+        "type": "json",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "121f11e8ca291a0e"
+            ]
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
