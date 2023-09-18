@@ -11935,11 +11935,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 270,
+        "x": 510,
         "y": 180,
         "wires": [
             [
-                "21af6d36518c9471"
+                "2b99940add736053"
             ]
         ]
     },
@@ -11962,34 +11962,27 @@
         "wires": []
     },
     {
-        "id": "21af6d36518c9471",
-        "type": "change",
+        "id": "2b99940add736053",
+        "type": "function",
         "z": "7c7f5941531dd155",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "gateway_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 340,
+        "name": "function 103",
+        "func": "var data_json = global.get('gateway_data');\n\nmsg.payload = data_json;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 180,
         "wires": [
             [
-                "dfed1b71144071b6"
+                "36796bfba9ecbc47",
+                "c93cb91a872abb0d"
             ]
         ]
     },
     {
-        "id": "dfed1b71144071b6",
+        "id": "c93cb91a872abb0d",
         "type": "debug",
         "z": "7c7f5941531dd155",
         "name": "debug 119",
@@ -12001,8 +11994,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1030,
-        "y": 260,
+        "x": 890,
+        "y": 120,
         "wires": []
     }
 ]
