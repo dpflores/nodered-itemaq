@@ -10790,7 +10790,7 @@
                 "t": "set",
                 "p": "gateway_data",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"AXO001\",\"data\":{\"gps\":{},\"jd2120\":{},\"sensor_estado\":{}}}",
+                "to": "{\"gateway_key\":\"AXO001\",\"timestamp\":0,\"data\":{\"gps\":{},\"jd2120\":{},\"sensor_estado\":{}}}",
                 "tot": "json"
             }
         ],
