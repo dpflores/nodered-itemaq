@@ -10788,7 +10788,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "data_json",
+                "p": "data",
                 "pt": "global",
                 "to": "",
                 "tot": "date"
@@ -10799,7 +10799,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
+        "x": 360,
         "y": 60,
         "wires": [
             [
@@ -11007,7 +11007,8 @@
             [
                 "91cfce2992b642bf",
                 "33cd24336cbfa1fb",
-                "33704dab6e7218e3"
+                "33704dab6e7218e3",
+                "15263b2027fcf74d"
             ]
         ]
     },
@@ -11044,8 +11045,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1250,
-        "y": 200,
+        "x": 1150,
+        "y": 120,
         "wires": []
     },
     {
@@ -11211,6 +11212,31 @@
         "x": 1230,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "15263b2027fcf74d",
+        "type": "change",
+        "z": "a1b1f2bdd5b2d11d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data.data",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1410,
+        "y": 160,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "2d7923c474abe8c7",
