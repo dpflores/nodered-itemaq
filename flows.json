@@ -10790,8 +10790,8 @@
                 "t": "set",
                 "p": "data_json",
                 "pt": "global",
-                "to": "{msg.payload}",
-                "tot": "json"
+                "to": "",
+                "tot": "date"
             }
         ],
         "action": "",
