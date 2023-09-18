@@ -3840,7 +3840,7 @@
             [
                 "5c7e777abb066136",
                 "137308aff7f5aabf",
-                "a67614b470d13ce5"
+                "121f11e8ca291a0e"
             ]
         ]
     },
@@ -4065,6 +4065,35 @@
         "libs": [],
         "x": 813.3333129882812,
         "y": 618.8888549804688,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "121f11e8ca291a0e",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "function 103",
+        "func": "\nmsg.topic = \"INSERT INTO `data2` (`data`) VALUES (\"+ msg.payload + \");\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4c0299bf7185dbc",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 820,
+        "y": 400,
         "wires": [
             []
         ]
