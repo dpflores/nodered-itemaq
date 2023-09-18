@@ -11221,7 +11221,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "data.data",
+                "p": "data",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -11232,7 +11232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
+        "x": 1400,
         "y": 160,
         "wires": [
             []
