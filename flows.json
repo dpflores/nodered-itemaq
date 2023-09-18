@@ -10790,7 +10790,7 @@
                 "t": "set",
                 "p": "gateway_data",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"AXO001\",\"timestamp\":0,\"data\":{\"gps\":{\"latitude\":0,\"longitude\":0,\"speed\":0},\"jd2120\":{\"anngle\":0},\"sensor_estado\":{}}}",
+                "to": "{\"gateway_key\":\"AXO001\",\"timestamp\":0,\"data\":{\"gps\":{\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0},\"jd2120\":{\"angle\":0},\"sensor_estado\":{}}}",
                 "tot": "json"
             }
         ],
@@ -11743,6 +11743,31 @@
                 "9f8c640d28c2dbbc",
                 "e2e8f2bc2a0fa59e"
             ]
+        ]
+    },
+    {
+        "id": "170b8b8963c41720",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.jd2120.angle",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1350,
+        "y": 160,
+        "wires": [
+            []
         ]
     },
     {
