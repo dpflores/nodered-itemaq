@@ -12103,7 +12103,7 @@
                 "t": "set",
                 "p": "gateway_data.data.sensor_estado.state",
                 "pt": "global",
-                "to": "positivo",
+                "to": "negativo",
                 "tot": "str"
             }
         ],
