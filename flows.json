@@ -3839,7 +3839,8 @@
         "wires": [
             [
                 "5c7e777abb066136",
-                "137308aff7f5aabf"
+                "137308aff7f5aabf",
+                "a67614b470d13ce5"
             ]
         ]
     },
@@ -3949,12 +3950,12 @@
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 620,
+        "x": 600,
         "y": 660,
         "wires": [
             [
                 "4d989b9847ec219b",
-                "a67614b470d13ce5"
+                "16cf2d6aee4645cb"
             ]
         ]
     },
@@ -3989,7 +3990,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
+        "x": 990,
         "y": 660,
         "wires": []
     },
@@ -4027,7 +4028,7 @@
         "type": "json-2-csv",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "x": 880,
+        "x": 1060,
         "y": 600,
         "wires": [
             [
@@ -4047,9 +4048,26 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1110,
+        "x": 1290,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "16cf2d6aee4645cb",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "msg.payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 813.3333129882812,
+        "y": 618.8888549804688,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
