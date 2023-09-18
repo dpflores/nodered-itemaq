@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "ac1b7f858f654d07",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "2075d3e5148f3b9a",
         "type": "group",
         "z": "d91ac3d282c069d0",
@@ -3889,7 +3897,7 @@
         "z": "d91ac3d282c069d0",
         "g": "2075d3e5148f3b9a",
         "name": "function 103",
-        "func": "\nvar data_json = global.get('data_json');\nvar gateway_data_json = global.get('gateway_data_json');\n\nfunction isFechaEnRango() {\n    // Obtener la fecha actual\n    var fechaActual = new Date();\n\n    // Verificar si el día actual está dentro del rango de días de trabajo\n    var diaActual = fechaActual.getDay(); // 0 (Domingo) - 6 (Sábado)\n    if (data_json.dias_de_trabajo_list[diaActual] === 0) {\n        return false; // El día actual no está dentro del rango de días de trabajo\n    }\n\n    // Verificar si la hora actual está dentro del rango de horas de trabajo\n    var horaActual = fechaActual.getHours();\n    if (horaActual < data_json.horario_inicio || horaActual >= data_json.horario_fin) {\n        return false; // La hora actual no está dentro del rango de horas de trabajo\n    }\n\n    // La fecha actual está dentro del rango de días y horas de trabajo\n    return true;\n}\n\n\nif (isFechaEnRango()) {\n    msg.payload = \"La fecha actual está dentro del rango de días y horas de trabajo\";\n    if (gateway_data_json.flag == \"null\") {\n        msg.topic = \"INSERT INTO `data` (`velocidad`, `carga`, `gps_lat`, `gps_lon`, `estado`) VALUES ('\" + 0 + \"','\" + 0 + \"','\" + 0 + \"','\" + 0 + \"','no uso');\";\n        gateway_data_json.estado = \"no uso\";\n    }\n    else {\n        msg.topic = \"INSERT INTO `data` (`velocidad`, `carga`, `gps_lat`, `gps_lon`, `estado`) VALUES ('\" + gateway_data_json.gps_speed + \"','\" + gateway_data_json.carga + \"','\" + gateway_data_json.gps_lat + \"','\" + gateway_data_json.gps_lon + \"','\" + gateway_data_json.estado + \"');\";\n        gateway_data_json.flag = \"null\";\n    }\n    return msg;\n}\nelse {\n    msg.payload = \"La fecha actual NO está dentro del rango de días y horas de trabajo\";\n    return msg;\n}\n",
+        "func": "\nvar gd = global.get('gateway_data');\n\nvar fecha = gd.timestamp;\nvar gps_lat = gd.data.latitude;\nvar gps_lon = gd.data.longitude;\nvar gps_alt = gd.data.altitude;\nvar speed = gd.data.speed\nvar angle = gd.data.jd2120.angle;\nvar state = gd.data.sensor_estado.state;\n\nmsg.payload = \"Save\"\nmsg.topic = \"INSERT INTO `data` (`fecha`, `angle`, `gps_lat`, `gps_lon`, `speed`, `state`) VALUES ('\" + fecha + \"','\" + angle + \"','\" + gps_lat + \"','\" + gps_lon + \"','\" + speed + \"', '\"+ state + \"');\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
