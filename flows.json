@@ -11221,7 +11221,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "data.jd2120.angle",
+                "p": "gateway_data.data.jd2120.angle",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -11232,7 +11232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1440,
+        "x": 1490,
         "y": 160,
         "wires": [
             []
