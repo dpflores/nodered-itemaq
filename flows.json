@@ -96,7 +96,7 @@
         ],
         "x": 74,
         "y": 419,
-        "w": 632,
+        "w": 612,
         "h": 142
     },
     {
@@ -580,7 +580,7 @@
         "name": "",
         "host": "localhost",
         "port": "3306",
-        "db": "itemaq_db",
+        "db": "angulamiento",
         "tz": "",
         "charset": "UTF8"
     },
@@ -3841,7 +3841,7 @@
         "z": "d91ac3d282c069d0",
         "g": "3e6cdd9658d4b98d",
         "name": "debug 119",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3909,7 +3909,7 @@
         "z": "d91ac3d282c069d0",
         "g": "2075d3e5148f3b9a",
         "name": "debug 119",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3928,11 +3928,78 @@
         "g": "2075d3e5148f3b9a",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 610,
+        "x": 580,
         "y": 520,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "f845f47ef07ace87",
+        "type": "exec",
+        "z": "d91ac3d282c069d0",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 330,
+        "y": 700,
+        "wires": [
+            [
+                "291ebe351334647d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "db3a20e4fdeb37d8",
+        "type": "inject",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 700,
+        "wires": [
+            [
+                "f845f47ef07ace87"
+            ]
+        ]
+    },
+    {
+        "id": "291ebe351334647d",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 680,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
