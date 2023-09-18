@@ -11939,8 +11939,7 @@
         "y": 180,
         "wires": [
             [
-                "2b99940add736053",
-                "a7e5555fa3825c09"
+                "2b99940add736053"
             ]
         ]
     },
@@ -11977,7 +11976,8 @@
         "y": 180,
         "wires": [
             [
-                "36796bfba9ecbc47"
+                "36796bfba9ecbc47",
+                "c93cb91a872abb0d"
             ]
         ]
     },
@@ -11997,32 +11997,5 @@
         "x": 890,
         "y": 120,
         "wires": []
-    },
-    {
-        "id": "a7e5555fa3825c09",
-        "type": "change",
-        "z": "7c7f5941531dd155",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "gateway_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 280,
-        "wires": [
-            [
-                "c93cb91a872abb0d"
-            ]
-        ]
     }
 ]
