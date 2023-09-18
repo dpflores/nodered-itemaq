@@ -10802,8 +10802,26 @@
         "x": 360,
         "y": 60,
         "wires": [
-            []
+            [
+                "a25e103160a7edec"
+            ]
         ]
+    },
+    {
+        "id": "a25e103160a7edec",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 60,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
