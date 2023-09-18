@@ -10788,10 +10788,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "data",
+                "p": "gateway_data",
                 "pt": "global",
-                "to": "",
-                "tot": "date"
+                "to": "data:{gps:{}}",
+                "tot": "json"
             }
         ],
         "action": "",
@@ -10799,7 +10799,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 390,
         "y": 60,
         "wires": [
             [
