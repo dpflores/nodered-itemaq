@@ -7,4 +7,6 @@ sistema de angulamiento para la empresa itemaq
 ```
 user: acme
 password: $ACME_INTERNAL_PASS
+database: angulamiento
+port: 3306
 ```
