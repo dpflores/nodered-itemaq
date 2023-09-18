@@ -10788,10 +10788,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "data",
-                "tot": "global"
+                "p": "data_json",
+                "pt": "global",
+                "to": "{msg.payload}",
+                "tot": "json"
             }
         ],
         "action": "",
@@ -10799,7 +10799,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 380,
         "y": 60,
         "wires": [
             [
