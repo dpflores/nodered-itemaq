@@ -11966,7 +11966,7 @@
         "type": "function",
         "z": "7c7f5941531dd155",
         "name": "function 103",
-        "func": "var data_json = global.get('gateway_data');\n\nmsg.payload = data_json;\n\nreturn msg;",
+        "func": "var data_json = global.get('gateway_data');\ndata_json.timestamp = msg.payload;\nmsg.payload = data_json;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
