@@ -11415,7 +11415,8 @@
         "y": 320,
         "wires": [
             [
-                "5b65fd3eaa023232"
+                "5b65fd3eaa023232",
+                "e476710c2d6f2857"
             ]
         ]
     },
@@ -11434,7 +11435,8 @@
         "y": 260,
         "wires": [
             [
-                "5a62c122689e64ee"
+                "5a62c122689e64ee",
+                "170b8b8963c41720"
             ]
         ]
     },
@@ -11453,7 +11455,8 @@
         "y": 380,
         "wires": [
             [
-                "4ecf06f2e06e7bf8"
+                "4ecf06f2e06e7bf8",
+                "0a51973433ed0faf"
             ]
         ]
     },
@@ -11753,7 +11756,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "gateway_data.data.jd2120.angle",
+                "p": "gateway_data.data.gps.latitude",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -11764,8 +11767,58 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1350,
+        "x": 1520,
         "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e476710c2d6f2857",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gps.longitude",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1610,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0a51973433ed0faf",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gps.altitude",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1600,
+        "y": 360,
         "wires": [
             []
         ]
