@@ -3944,102 +3944,17 @@
         ]
     },
     {
-        "id": "a06d74db.919808",
-        "type": "mqtt in",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "topic": "#",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 270,
-        "y": 760,
-        "wires": [
-            [
-                "98201759.e4d558"
-            ]
-        ]
-    },
-    {
-        "id": "6825dd23.d4ee44",
-        "type": "debug",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "true",
-        "x": 670,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "98201759.e4d558",
-        "type": "function",
-        "z": "d91ac3d282c069d0",
-        "name": "Create query in topic",
-        "func": "var out = \"INSERT INTO **your_table_name_here** (timestamp,topic,data)\"\nout = out + \"VALUES ('\" + new Date().toISOString() + \"','\" \nout = out + msg.topic + \"','\" + msg.payload + \"');\"\n    \nmsg.topic=out;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 460,
-        "y": 760,
-        "wires": [
-            [
-                "6825dd23.d4ee44",
-                "ddb3e588.199508"
-            ]
-        ]
-    },
-    {
-        "id": "be41a506.f7f9f8",
-        "type": "comment",
-        "z": "d91ac3d282c069d0",
-        "name": "Log everything",
-        "info": "",
-        "x": 260,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "4265dd53.5b18a4",
-        "type": "debug",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 810,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "ddb3e588.199508",
-        "type": "mysql",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "x": 670,
-        "y": 760,
-        "wires": [
-            [
-                "4265dd53.5b18a4"
-            ]
-        ]
-    },
-    {
         "id": "89c8205089453bdc",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 520,
-        "y": 860,
+        "x": 620,
+        "y": 660,
         "wires": [
-            []
+            [
+                "4d989b9847ec219b"
+            ]
         ]
     },
     {
@@ -4047,16 +3962,63 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "\n\n\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data WHERE fecha >= '\" + date_init + \"' AND fecha <= '\" + date_end + \"';\";\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data\";\n\nreturn msg;",
         "outputs": 1,
-        "noerr": 2,
+        "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 860,
+        "x": 400,
+        "y": 660,
         "wires": [
-            []
+            [
+                "89c8205089453bdc"
+            ]
+        ]
+    },
+    {
+        "id": "4d989b9847ec219b",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "5c5e2e73dfc922b1",
+        "type": "inject",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 660,
+        "wires": [
+            [
+                "f744467ba4084a45"
+            ]
         ]
     },
     {
