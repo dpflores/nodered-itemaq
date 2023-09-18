@@ -12046,7 +12046,8 @@
         "y": 180,
         "wires": [
             [
-                "2d311656c300bea0"
+                "2d311656c300bea0",
+                "2d17b98fea916abe"
             ],
             []
         ]
@@ -12061,7 +12062,7 @@
                 "t": "set",
                 "p": "gateway_data.data.sensor_estado.state",
                 "pt": "global",
-                "to": "",
+                "to": "positivo",
                 "tot": "str"
             }
         ],
@@ -12090,6 +12091,31 @@
             [
                 "15420cb99e922f52"
             ]
+        ]
+    },
+    {
+        "id": "2d17b98fea916abe",
+        "type": "change",
+        "z": "d4fbb3fe0699c65f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.sensor_estado.state",
+                "pt": "global",
+                "to": "positivo",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 200,
+        "wires": [
+            []
         ]
     }
 ]
