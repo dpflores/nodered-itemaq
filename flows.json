@@ -11291,8 +11291,7 @@
         "y": 620,
         "wires": [
             [
-                "e3cb23e9838998a9",
-                "51955f73a4ec2768"
+                "e3cb23e9838998a9"
             ]
         ]
     },
@@ -11359,7 +11358,7 @@
             [
                 "f2457d116b282df6",
                 "b5dfe0c350e6a7ab",
-                "3cac45cedffa8f36"
+                "0534cbc24653f9c7"
             ]
         ]
     },
@@ -11387,7 +11386,7 @@
         "seg2": "",
         "className": "",
         "x": 1300,
-        "y": 620,
+        "y": 700,
         "wires": []
     },
     {
@@ -11459,42 +11458,6 @@
         ]
     },
     {
-        "id": "51955f73a4ec2768",
-        "type": "function",
-        "z": "87fe75fba6b00d60",
-        "name": "velocidad",
-        "func": "msg.payload = msg.payload.speedKmph;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 760,
-        "wires": [
-            [
-                "9745472ffcfaeb56"
-            ]
-        ]
-    },
-    {
-        "id": "9745472ffcfaeb56",
-        "type": "function",
-        "z": "87fe75fba6b00d60",
-        "name": "function 97",
-        "func": "var data_json = global.get('data_json');\n\n\ndata_json.velocidad = msg.payload;\n\nmsg.payload = data_json;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ca14bd801a031291",
         "type": "inject",
         "z": "87fe75fba6b00d60",
@@ -11554,7 +11517,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 1310,
-        "y": 680,
+        "y": 760,
         "wires": []
     },
     {
@@ -11572,23 +11535,6 @@
         "statusType": "auto",
         "x": 1150,
         "y": 440,
-        "wires": []
-    },
-    {
-        "id": "3cac45cedffa8f36",
-        "type": "debug",
-        "z": "87fe75fba6b00d60",
-        "name": "debug 113",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1410,
-        "y": 580,
         "wires": []
     },
     {
@@ -11726,6 +11672,31 @@
         "x": 1210,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "0534cbc24653f9c7",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gps.speed",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 620,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "0fa85570732327d9",
