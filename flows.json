@@ -10773,7 +10773,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "a5c3e22a254f5be0"
@@ -10800,7 +10800,7 @@
         "to": "",
         "reg": false,
         "x": 390,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "a25e103160a7edec"
@@ -10820,7 +10820,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 590,
-        "y": 60,
+        "y": 80,
         "wires": []
     },
     {
@@ -11221,7 +11221,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "data",
+                "p": "data.jd2120.angle",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -11232,7 +11232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1400,
+        "x": 1440,
         "y": 160,
         "wires": [
             []
