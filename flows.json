@@ -3944,6 +3944,122 @@
         ]
     },
     {
+        "id": "a06d74db.919808",
+        "type": "mqtt in",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 270,
+        "y": 760,
+        "wires": [
+            [
+                "98201759.e4d558"
+            ]
+        ]
+    },
+    {
+        "id": "6825dd23.d4ee44",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 670,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "98201759.e4d558",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "Create query in topic",
+        "func": "var out = \"INSERT INTO **your_table_name_here** (timestamp,topic,data)\"\nout = out + \"VALUES ('\" + new Date().toISOString() + \"','\" \nout = out + msg.topic + \"','\" + msg.payload + \"');\"\n    \nmsg.topic=out;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 760,
+        "wires": [
+            [
+                "6825dd23.d4ee44",
+                "ddb3e588.199508"
+            ]
+        ]
+    },
+    {
+        "id": "be41a506.f7f9f8",
+        "type": "comment",
+        "z": "d91ac3d282c069d0",
+        "name": "Log everything",
+        "info": "",
+        "x": 260,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "4265dd53.5b18a4",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 810,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ddb3e588.199508",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "x": 670,
+        "y": 760,
+        "wires": [
+            [
+                "4265dd53.5b18a4"
+            ]
+        ]
+    },
+    {
+        "id": "89c8205089453bdc",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 520,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f744467ba4084a45",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "\n\n\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data WHERE fecha >= '\" + date_init + \"' AND fecha <= '\" + date_end + \"';\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 2,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "62e4bcbf75a77da1",
         "type": "debug",
         "z": "a1b1f2bdd5b2d11d",
