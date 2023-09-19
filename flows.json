@@ -4107,7 +4107,7 @@
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 660,
+        "x": 600,
         "y": 820,
         "wires": [
             [
@@ -4127,7 +4127,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 420,
         "y": 820,
         "wires": [
             [
@@ -4156,7 +4156,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 280,
+        "x": 240,
         "y": 820,
         "wires": [
             [
@@ -4176,7 +4176,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
+        "x": 810,
         "y": 880,
         "wires": []
     },
@@ -4195,7 +4195,7 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1070,
+        "x": 1190,
         "y": 820,
         "wires": [
             [
@@ -4216,8 +4216,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1330,
-        "y": 840,
+        "x": 1390,
+        "y": 820,
         "wires": []
     },
     {
@@ -4238,18 +4238,18 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "// function myFunction(value, index){\n//     msg.payload[index] = value.data;\n// }\n// msg.payload.forEach(myFunction);\n\n// return msg;\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = \"gateway_key, timestamp\";\nreturn msg;",
+        "func": "\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
+        "x": 800,
         "y": 820,
         "wires": [
             [
-                "2b0824d22b77546e",
-                "8ae32a670c8e9ddf"
+                "8ae32a670c8e9ddf",
+                "53ba20d09098fb1a"
             ]
         ]
     },
@@ -4265,9 +4265,28 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
+        "x": 1150,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "53ba20d09098fb1a",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "\nconst keys = Object.keys(msg.payload);\n\nmsg.columns = keys;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 820,
+        "wires": [
+            [
+                "2b0824d22b77546e"
+            ]
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
