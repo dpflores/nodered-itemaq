@@ -4020,35 +4020,6 @@
         ]
     },
     {
-        "id": "a67614b470d13ce5",
-        "type": "json-2-csv",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "x": 1380,
-        "y": 780,
-        "wires": [
-            [
-                "758194ea14c632a7"
-            ]
-        ]
-    },
-    {
-        "id": "758194ea14c632a7",
-        "type": "debug",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1330,
-        "y": 660,
-        "wires": []
-    },
-    {
         "id": "16cf2d6aee4645cb",
         "type": "function",
         "z": "d91ac3d282c069d0",
@@ -4140,7 +4111,6 @@
         "y": 820,
         "wires": [
             [
-                "0229b3b86d408205",
                 "5c36b7b82f2c640c"
             ]
         ]
@@ -4194,31 +4164,11 @@
         ]
     },
     {
-        "id": "0229b3b86d408205",
-        "type": "function",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "func": "// function myFunction(value, index){\n//     msg.payload[index] = value.data;\n// }\n// msg.payload.forEach(myFunction);\n\n// return msg;\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 840,
-        "y": 780,
-        "wires": [
-            [
-                "2f3d214b66313b7b",
-                "2b0824d22b77546e"
-            ]
-        ]
-    },
-    {
         "id": "5c36b7b82f2c640c",
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4227,23 +4177,6 @@
         "statusType": "auto",
         "x": 910,
         "y": 840,
-        "wires": []
-    },
-    {
-        "id": "214b272a7fbe98c7",
-        "type": "debug",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1250,
-        "y": 720,
         "wires": []
     },
     {
@@ -4314,6 +4247,23 @@
             [
                 "bcd67702c395a8fb"
             ]
+        ]
+    },
+    {
+        "id": "0229b3b86d408205",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "// function myFunction(value, index){\n//     msg.payload[index] = value.data;\n// }\n// msg.payload.forEach(myFunction);\n\n// return msg;\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 780,
+        "wires": [
+            []
         ]
     },
     {
