@@ -163,8 +163,8 @@
             "f33d6f0f0f55c8c7",
             "83165532a02208c5"
         ],
-        "x": 434,
-        "y": 399,
+        "x": 554,
+        "y": 419,
         "w": 512,
         "h": 122
     },
@@ -4084,7 +4084,7 @@
         "z": "d91ac3d282c069d0",
         "g": "6b7c1f4fbbe77c84",
         "name": "function 103",
-        "func": "\nmsg.topic = \"INSERT INTO `data2` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
+        "func": "\nmsg.topic = \"INSERT INTO `local_data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4357,14 +4357,14 @@
         "z": "d91ac3d282c069d0",
         "g": "65c598bb5234d69b",
         "name": "function 103",
-        "func": "\nmsg.topic = \"INSERT INTO `data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
+        "func": "\nmsg.topic = \"INSERT INTO `offline_data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 480,
+        "x": 790,
+        "y": 500,
         "wires": [
             [
                 "e9eeb5845b5972aa",
@@ -4379,8 +4379,8 @@
         "g": "65c598bb5234d69b",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 840,
-        "y": 480,
+        "x": 960,
+        "y": 500,
         "wires": [
             []
         ]
@@ -4394,8 +4394,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 510,
-        "y": 480,
+        "x": 630,
+        "y": 500,
         "wires": [
             [
                 "1b58f9fcea6b249f"
@@ -4416,8 +4416,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 440,
+        "x": 940,
+        "y": 460,
         "wires": []
     },
     {
