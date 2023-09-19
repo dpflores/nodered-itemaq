@@ -3838,7 +3838,7 @@
             [
                 "5c7e777abb066136",
                 "137308aff7f5aabf",
-                "bcd67702c395a8fb"
+                "40658d607094abce"
             ]
         ]
     },
@@ -4076,7 +4076,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 810,
         "y": 400,
         "wires": [
             [
@@ -4091,7 +4091,7 @@
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 820,
+        "x": 980,
         "y": 400,
         "wires": [
             []
@@ -4110,7 +4110,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
+        "x": 920,
         "y": 340,
         "wires": []
     },
@@ -4122,8 +4122,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 470,
-        "y": 380,
+        "x": 650,
+        "y": 400,
         "wires": [
             [
                 "121f11e8ca291a0e"
@@ -4210,8 +4210,7 @@
             [
                 "2f3d214b66313b7b",
                 "2b0824d22b77546e",
-                "1c425bc9e75a56d0",
-                "59720468a24213a3"
+                "1c425bc9e75a56d0"
             ]
         ]
     },
@@ -4319,38 +4318,37 @@
         "x": 1070,
         "y": 780,
         "wires": [
-            [
-                "f06d63ec5faac2f8"
-            ]
+            []
         ]
     },
     {
-        "id": "59720468a24213a3",
+        "id": "40658d607094abce",
         "type": "flat",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "x": 1070,
-        "y": 740,
+        "x": 510,
+        "y": 400,
         "wires": [
             [
-                "214b272a7fbe98c7"
+                "bcd67702c395a8fb",
+                "ace5b8bc17546695"
             ]
         ]
     },
     {
-        "id": "f06d63ec5faac2f8",
+        "id": "ace5b8bc17546695",
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1310,
-        "y": 760,
+        "x": 710,
+        "y": 360,
         "wires": []
     },
     {
