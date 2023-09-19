@@ -4279,9 +4279,9 @@
         "name": "",
         "filename": "/root/ITEMAQ/ANGULAMIENTO/data_angulamiento.csv",
         "appendNewline": true,
-        "createDir": false,
+        "createDir": true,
         "overwriteFile": "true",
-        "encoding": "none",
+        "encoding": "utf8",
         "x": 1430,
         "y": 880,
         "wires": [
