@@ -4281,21 +4281,22 @@
         "y": 840,
         "wires": [
             [
-                "6b64aa06297ecde1"
+                "37c20ef96deec730"
             ]
         ]
     },
     {
-        "id": "6b64aa06297ecde1",
+        "id": "37c20ef96deec730",
         "type": "debug",
         "z": "d91ac3d282c069d0",
-        "name": "",
-        "active": true,
+        "name": "debug 119",
+        "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
+        "tostatus": true,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "payload",
         "statusType": "auto",
         "x": 1330,
         "y": 840,
