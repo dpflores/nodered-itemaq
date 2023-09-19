@@ -4190,7 +4190,7 @@
         "hdrout": "none",
         "multi": "one",
         "ret": "\\n",
-        "temp": "gateway_key, timestamp, ",
+        "temp": "",
         "skip": "0",
         "strings": true,
         "include_empty_strings": "",
