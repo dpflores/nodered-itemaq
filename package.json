@@ -3,7 +3,8 @@
     "description": "sistema de angulamiento para la empresa itemaq",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-contrib-flatter": "1.1.1"
+        "node-red-contrib-flatter": "1.1.1",
+        "node-red-contrib-nmea": "0.0.4"
     },
     "node-red": {
         "settings": {
