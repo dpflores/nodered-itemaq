@@ -189,12 +189,13 @@
             "4d989b9847ec219b",
             "5c5e2e73dfc922b1",
             "a92b564f771f2512",
-            "45c703090ffad7f3"
+            "45c703090ffad7f3",
+            "f8c2dbe5933535aa"
         ],
         "x": 94,
         "y": 659,
-        "w": 992,
-        "h": 142
+        "w": 1012,
+        "h": 202
     },
     {
         "id": "f9b436a0d5058759",
@@ -3972,7 +3973,7 @@
         "z": "d91ac3d282c069d0",
         "g": "a5bc3a1930f09c8f",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3980,7 +3981,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 970,
-        "y": 760,
+        "y": 820,
         "wires": []
     },
     {
@@ -4381,7 +4382,8 @@
         "y": 760,
         "wires": [
             [
-                "4d989b9847ec219b"
+                "4d989b9847ec219b",
+                "f8c2dbe5933535aa"
             ]
         ]
     },
@@ -4391,7 +4393,7 @@
         "z": "d91ac3d282c069d0",
         "g": "a5bc3a1930f09c8f",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4401,6 +4403,25 @@
         "statusType": "auto",
         "x": 770,
         "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f8c2dbe5933535aa",
+        "type": "mqtt out",
+        "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
+        "name": "",
+        "topic": "data/itemaq_offline",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8d53d2f17df7fbc4",
+        "x": 990,
+        "y": 760,
         "wires": []
     },
     {
