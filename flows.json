@@ -4276,12 +4276,12 @@
         "type": "file",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "filename": "/root/ITEMAQ/ANGULAMIENTO/data.csv",
+        "filename": "/root/ITEMAQ/ANGULAMIENTO/data_angulamiento.csv",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1380,
+        "x": 1430,
         "y": 880,
         "wires": [
             []
