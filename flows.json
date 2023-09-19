@@ -4111,7 +4111,7 @@
         "z": "d91ac3d282c069d0",
         "g": "b3e051910f2a64ee",
         "name": "",
-        "func": "\nmsg.topic = \"SELECT * FROM local_data\";\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT data FROM local_data\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
