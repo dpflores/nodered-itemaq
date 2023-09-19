@@ -3952,7 +3952,7 @@
         "z": "d91ac3d282c069d0",
         "g": "a5bc3a1930f09c8f",
         "name": "",
-        "func": "\nmsg.topic = \"SELECT * FROM data LIMIT 1\";\n\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT * FROM offline_data LIMIT 1\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
