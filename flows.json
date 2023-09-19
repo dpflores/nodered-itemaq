@@ -3798,7 +3798,9 @@
         "x": 190,
         "y": 320,
         "wires": [
-            []
+            [
+                "bbdfb97bf5cbeab2"
+            ]
         ]
     },
     {
@@ -4209,8 +4211,7 @@
         "wires": [
             [
                 "2f3d214b66313b7b",
-                "2b0824d22b77546e",
-                "1c425bc9e75a56d0"
+                "2b0824d22b77546e"
             ]
         ]
     },
@@ -4292,7 +4293,7 @@
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "debug 119",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -4300,26 +4301,9 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1230,
-        "y": 540,
+        "x": 1030,
+        "y": 740,
         "wires": []
-    },
-    {
-        "id": "1c425bc9e75a56d0",
-        "type": "function",
-        "z": "d91ac3d282c069d0",
-        "name": "faltten nested json array",
-        "func": "function flattenJSON(obj) {\n    let result = {};\n\n    function recurse(cur, prop) {\n        if (Object(cur) !== cur) {\n            result[prop] = cur;\n        } else if (Array.isArray(cur)) {\n            for (let i = 0, l = cur.length; i < l; i++) {\n                recurse(cur[i], prop + \"[\" + i + \"]\");\n            }\n            if (l == 0) {\n                result[prop] = [];\n            }\n        } else {\n            let isEmpty = true;\n            for (let p in cur) {\n                isEmpty = false;\n                recurse(cur[p], prop ? prop + \".\" + p : p);\n            }\n            if (isEmpty && prop) {\n                result[prop] = {};\n            }\n        }\n    }\n    recurse(obj, \"\");\n    return result;\n}\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = flattenJSON(msg.payload[i]);\n}\n\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 4,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 780,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "40658d607094abce",
