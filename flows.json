@@ -201,6 +201,25 @@
         "h": 262
     },
     {
+        "id": "1a0d550707f8cc4f",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "Eliminar data anterior a 70 días",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3e80e2e1aef47e06",
+            "58836c8d2ead4daa",
+            "60716de1fbc60246"
+        ],
+        "x": 114,
+        "y": 1239,
+        "w": 612,
+        "h": 82
+    },
+    {
         "id": "f9b436a0d5058759",
         "type": "serial-port",
         "serialport": "/dev/ttyUSB1",
@@ -4486,6 +4505,7 @@
         "id": "3e80e2e1aef47e06",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "1a0d550707f8cc4f",
         "name": "",
         "func": "msg.topic = \"DELETE FROM offline WHERE fecha < DATEADD(DAY, -70, GETDATE());\";\nreturn msg;",
         "outputs": 1,
@@ -4493,7 +4513,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 420,
         "y": 1280,
         "wires": [
             [
@@ -4505,9 +4525,10 @@
         "id": "58836c8d2ead4daa",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
+        "g": "1a0d550707f8cc4f",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 580,
+        "x": 620,
         "y": 1280,
         "wires": [
             []
@@ -4517,6 +4538,7 @@
         "id": "60716de1fbc60246",
         "type": "inject",
         "z": "d91ac3d282c069d0",
+        "g": "1a0d550707f8cc4f",
         "name": "",
         "props": [
             {
@@ -4534,7 +4556,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
+        "x": 230,
         "y": 1280,
         "wires": [
             [
