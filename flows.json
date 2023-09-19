@@ -102,8 +102,8 @@
             "fd17bf43461735aa",
             "d814de64e9b17a54"
         ],
-        "x": 74,
-        "y": 419,
+        "x": 14,
+        "y": 559,
         "w": 612,
         "h": 142
     },
@@ -122,10 +122,51 @@
             "bbdfb97bf5cbeab2",
             "137308aff7f5aabf"
         ],
-        "x": 74,
-        "y": 219,
+        "x": 34,
+        "y": 119,
         "w": 612,
         "h": 142
+    },
+    {
+        "id": "6b7c1f4fbbe77c84",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "Guardado de data local",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "121f11e8ca291a0e",
+            "c4c0299bf7185dbc",
+            "bcd67702c395a8fb",
+            "40658d607094abce",
+            "838733237fd1d982"
+        ],
+        "x": 554,
+        "y": 279,
+        "w": 652,
+        "h": 122
+    },
+    {
+        "id": "65c598bb5234d69b",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "Guardado de data sin internet",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1b58f9fcea6b249f",
+            "e9eeb5845b5972aa",
+            "f33d6f0f0f55c8c7",
+            "83165532a02208c5"
+        ],
+        "x": 434,
+        "y": 399,
+        "w": 512,
+        "h": 122
     },
     {
         "id": "f9b436a0d5058759",
@@ -3722,8 +3763,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 80,
+        "x": 130,
+        "y": 40,
         "wires": [
             [
                 "a5c3e22a254f5be0"
@@ -3749,8 +3790,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 390,
-        "y": 80,
+        "x": 350,
+        "y": 40,
         "wires": [
             [
                 "a25e103160a7edec"
@@ -3769,8 +3810,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 80,
+        "x": 550,
+        "y": 40,
         "wires": []
     },
     {
@@ -3795,8 +3836,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
-        "y": 320,
+        "x": 150,
+        "y": 220,
         "wires": [
             []
         ]
@@ -3816,8 +3857,8 @@
         "correl": "",
         "expiry": "",
         "broker": "8d53d2f17df7fbc4",
-        "x": 590,
-        "y": 320,
+        "x": 550,
+        "y": 220,
         "wires": []
     },
     {
@@ -3832,13 +3873,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 320,
+        "x": 330,
+        "y": 220,
         "wires": [
             [
                 "5c7e777abb066136",
                 "137308aff7f5aabf",
-                "40658d607094abce"
+                "40658d607094abce",
+                "f33d6f0f0f55c8c7"
             ]
         ]
     },
@@ -3856,8 +3898,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 570,
-        "y": 260,
+        "x": 530,
+        "y": 160,
         "wires": []
     },
     {
@@ -3882,8 +3924,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
-        "y": 520,
+        "x": 130,
+        "y": 660,
         "wires": [
             []
         ]
@@ -3900,8 +3942,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 520,
+        "x": 310,
+        "y": 660,
         "wires": [
             [
                 "fd17bf43461735aa",
@@ -3923,8 +3965,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 570,
-        "y": 460,
+        "x": 510,
+        "y": 600,
         "wires": []
     },
     {
@@ -3934,8 +3976,8 @@
         "g": "2075d3e5148f3b9a",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 580,
-        "y": 520,
+        "x": 520,
+        "y": 660,
         "wires": [
             []
         ]
@@ -3946,8 +3988,8 @@
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 600,
-        "y": 660,
+        "x": 580,
+        "y": 780,
         "wires": [
             [
                 "4d989b9847ec219b",
@@ -3966,8 +4008,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 660,
+        "x": 380,
+        "y": 780,
         "wires": [
             [
                 "89c8205089453bdc"
@@ -3986,8 +4028,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 990,
-        "y": 660,
+        "x": 970,
+        "y": 780,
         "wires": []
     },
     {
@@ -4011,8 +4053,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 220,
-        "y": 660,
+        "x": 200,
+        "y": 780,
         "wires": [
             [
                 "f744467ba4084a45"
@@ -4030,8 +4072,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 813.3333129882812,
-        "y": 618.8888549804688,
+        "x": 793.3333129882812,
+        "y": 738.8888549804688,
         "wires": [
             []
         ]
@@ -4040,6 +4082,7 @@
         "id": "121f11e8ca291a0e",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "6b7c1f4fbbe77c84",
         "name": "function 103",
         "func": "\nmsg.topic = \"INSERT INTO `data2` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
         "outputs": 1,
@@ -4047,8 +4090,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 400,
+        "x": 930,
+        "y": 360,
         "wires": [
             [
                 "c4c0299bf7185dbc",
@@ -4060,10 +4103,11 @@
         "id": "c4c0299bf7185dbc",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
+        "g": "6b7c1f4fbbe77c84",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 980,
-        "y": 400,
+        "x": 1100,
+        "y": 360,
         "wires": [
             []
         ]
@@ -4072,6 +4116,7 @@
         "id": "838733237fd1d982",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "6b7c1f4fbbe77c84",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -4081,20 +4126,21 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
-        "y": 340,
+        "x": 1080,
+        "y": 320,
         "wires": []
     },
     {
         "id": "bcd67702c395a8fb",
         "type": "json",
         "z": "d91ac3d282c069d0",
+        "g": "6b7c1f4fbbe77c84",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 650,
-        "y": 400,
+        "x": 770,
+        "y": 360,
         "wires": [
             [
                 "121f11e8ca291a0e"
@@ -4107,8 +4153,8 @@
         "z": "d91ac3d282c069d0",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 600,
-        "y": 820,
+        "x": 580,
+        "y": 940,
         "wires": [
             [
                 "5c36b7b82f2c640c",
@@ -4127,8 +4173,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 820,
+        "x": 400,
+        "y": 940,
         "wires": [
             [
                 "49948d8554edb4e3"
@@ -4156,8 +4202,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 820,
+        "x": 220,
+        "y": 940,
         "wires": [
             [
                 "70036d189377757b"
@@ -4176,8 +4222,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
-        "y": 880,
+        "x": 790,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4195,8 +4241,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1090,
-        "y": 820,
+        "x": 1070,
+        "y": 940,
         "wires": [
             [
                 "37c20ef96deec730",
@@ -4217,17 +4263,18 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1390,
-        "y": 820,
+        "x": 1370,
+        "y": 900,
         "wires": []
     },
     {
         "id": "40658d607094abce",
         "type": "flat",
         "z": "d91ac3d282c069d0",
+        "g": "6b7c1f4fbbe77c84",
         "name": "",
-        "x": 510,
-        "y": 400,
+        "x": 630,
+        "y": 360,
         "wires": [
             [
                 "bcd67702c395a8fb"
@@ -4245,8 +4292,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 820,
+        "x": 780,
+        "y": 940,
         "wires": [
             [
                 "66ddce359e5ff10c",
@@ -4268,8 +4315,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
-        "y": 780,
+        "x": 950,
+        "y": 900,
         "wires": []
     },
     {
@@ -4282,8 +4329,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 1430,
-        "y": 880,
+        "x": 1410,
+        "y": 960,
         "wires": [
             []
         ]
@@ -4300,8 +4347,77 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
-        "y": 880,
+        "x": 1030,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1b58f9fcea6b249f",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "g": "65c598bb5234d69b",
+        "name": "function 103",
+        "func": "\nmsg.topic = \"INSERT INTO `data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "e9eeb5845b5972aa",
+                "83165532a02208c5"
+            ]
+        ]
+    },
+    {
+        "id": "e9eeb5845b5972aa",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "g": "65c598bb5234d69b",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 840,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f33d6f0f0f55c8c7",
+        "type": "json",
+        "z": "d91ac3d282c069d0",
+        "g": "65c598bb5234d69b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "1b58f9fcea6b249f"
+            ]
+        ]
+    },
+    {
+        "id": "83165532a02208c5",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "g": "65c598bb5234d69b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 440,
         "wires": []
     },
     {
