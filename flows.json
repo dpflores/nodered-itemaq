@@ -88,26 +88,6 @@
         "env": []
     },
     {
-        "id": "2075d3e5148f3b9a",
-        "type": "group",
-        "z": "d91ac3d282c069d0",
-        "name": "Almacenamiento local",
-        "style": {
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "7cbe20e1ad19d0b3",
-            "8bedb70cdba32459",
-            "fd17bf43461735aa",
-            "d814de64e9b17a54"
-        ],
-        "x": 14,
-        "y": 559,
-        "w": 612,
-        "h": 142
-    },
-    {
         "id": "3e6cdd9658d4b98d",
         "type": "group",
         "z": "d91ac3d282c069d0",
@@ -167,6 +147,32 @@
         "y": 419,
         "w": 512,
         "h": 122
+    },
+    {
+        "id": "b3e051910f2a64ee",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "Guardar data local a CSV",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "49948d8554edb4e3",
+            "70036d189377757b",
+            "15391147988a1a32",
+            "5c36b7b82f2c640c",
+            "2b0824d22b77546e",
+            "37c20ef96deec730",
+            "0229b3b86d408205",
+            "66ddce359e5ff10c",
+            "e31e0fc5c4dce10e",
+            "cd43e5a5af71b3fd"
+        ],
+        "x": 34,
+        "y": 879,
+        "w": 1532,
+        "h": 182
     },
     {
         "id": "f9b436a0d5058759",
@@ -3903,86 +3909,6 @@
         "wires": []
     },
     {
-        "id": "7cbe20e1ad19d0b3",
-        "type": "inject",
-        "z": "d91ac3d282c069d0",
-        "g": "2075d3e5148f3b9a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8bedb70cdba32459",
-        "type": "function",
-        "z": "d91ac3d282c069d0",
-        "g": "2075d3e5148f3b9a",
-        "name": "function 103",
-        "func": "\nvar gd = global.get('gateway_data');\n\n// var fecha = gd.timestamp;\n// var fecha = new Date().toISOString().slice(0,19).replace(`T`, ` `);\nvar gps_lat = gd.data.gps.latitude;\nvar gps_lon = gd.data.gps.longitude;\nvar gps_alt = gd.data.gps.altitude;\nvar speed = gd.data.gps.speed\nvar angle = gd.data.jd2120.angle;\nvar state = gd.data.sensor_estado.state;\n\nmsg.payload = \"Save\"\nmsg.topic = \"INSERT INTO `data` (`angle`, `gps_lat`, `gps_lon`, `speed`, `state`) VALUES (\" + angle + \",\" + gps_lat + \",\" + gps_lon + \",\" + speed + \", '\"+ state + \"');\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 310,
-        "y": 660,
-        "wires": [
-            [
-                "fd17bf43461735aa",
-                "d814de64e9b17a54"
-            ]
-        ]
-    },
-    {
-        "id": "fd17bf43461735aa",
-        "type": "debug",
-        "z": "d91ac3d282c069d0",
-        "g": "2075d3e5148f3b9a",
-        "name": "debug 119",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "topic",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 510,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "d814de64e9b17a54",
-        "type": "mysql",
-        "z": "d91ac3d282c069d0",
-        "g": "2075d3e5148f3b9a",
-        "mydb": "45598baf2af77f76",
-        "name": "",
-        "x": 520,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "89c8205089453bdc",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
@@ -4151,10 +4077,11 @@
         "id": "49948d8554edb4e3",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 580,
-        "y": 940,
+        "x": 500,
+        "y": 960,
         "wires": [
             [
                 "5c36b7b82f2c640c",
@@ -4166,15 +4093,16 @@
         "id": "70036d189377757b",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
-        "func": "\nmsg.topic = \"SELECT * FROM data2 LIMIT 10\";\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT * FROM local_data\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 940,
+        "x": 320,
+        "y": 960,
         "wires": [
             [
                 "49948d8554edb4e3"
@@ -4185,6 +4113,7 @@
         "id": "15391147988a1a32",
         "type": "inject",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "props": [
             {
@@ -4202,8 +4131,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 220,
-        "y": 940,
+        "x": 140,
+        "y": 960,
         "wires": [
             [
                 "70036d189377757b"
@@ -4214,6 +4143,7 @@
         "id": "5c36b7b82f2c640c",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -4222,14 +4152,15 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
-        "y": 1000,
+        "x": 710,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "2b0824d22b77546e",
         "type": "csv",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "sep": ",",
         "hdrin": true,
@@ -4241,8 +4172,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1070,
-        "y": 940,
+        "x": 990,
+        "y": 960,
         "wires": [
             [
                 "37c20ef96deec730",
@@ -4254,6 +4185,7 @@
         "id": "37c20ef96deec730",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "debug 119",
         "active": false,
         "tosidebar": true,
@@ -4263,8 +4195,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1370,
-        "y": 900,
+        "x": 1290,
+        "y": 920,
         "wires": []
     },
     {
@@ -4285,6 +4217,7 @@
         "id": "0229b3b86d408205",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n\n    // Converting simple timestamp to human readable\n    // time\n    array_out[i].timestamp = unixTimestampToHumanReadable(array_out[i].timestamp);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n\n\n\n// Function for timestamp to readable time\nfunction unixTimestampToHumanReadable(unixTimestamp) {\n    const date = new Date(unixTimestamp);\n    const year = date.getFullYear();\n    const month = (date.getMonth() + 1).toString().padStart(2, '0');\n    const day = date.getDate().toString().padStart(2, '0');\n    const hours = date.getHours().toString().padStart(2, '0');\n    const minutes = date.getMinutes().toString().padStart(2, '0');\n    const seconds = date.getSeconds().toString().padStart(2, '0');\n\n    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;\n}\n",
         "outputs": 1,
@@ -4292,8 +4225,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 940,
+        "x": 700,
+        "y": 960,
         "wires": [
             [
                 "66ddce359e5ff10c",
@@ -4306,6 +4239,7 @@
         "id": "66ddce359e5ff10c",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -4315,22 +4249,23 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 950,
-        "y": 900,
+        "x": 870,
+        "y": 920,
         "wires": []
     },
     {
         "id": "e31e0fc5c4dce10e",
         "type": "file",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "filename": "/root/ITEMAQ/ANGULAMIENTO/data_angulamiento.csv",
         "appendNewline": true,
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 1410,
-        "y": 960,
+        "x": 1330,
+        "y": 980,
         "wires": [
             []
         ]
@@ -4339,6 +4274,7 @@
         "id": "cd43e5a5af71b3fd",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "b3e051910f2a64ee",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -4347,8 +4283,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1030,
-        "y": 1000,
+        "x": 950,
+        "y": 1020,
         "wires": []
     },
     {
