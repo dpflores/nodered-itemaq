@@ -4024,7 +4024,7 @@
         "type": "json-2-csv",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "x": 1120,
+        "x": 1280,
         "y": 780,
         "wires": [
             [
@@ -4204,12 +4204,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
+        "x": 840,
         "y": 780,
         "wires": [
             [
-                "a67614b470d13ce5",
-                "214b272a7fbe98c7"
+                "387d9ce5dfe2d597"
             ]
         ]
     },
@@ -4241,9 +4240,26 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
+        "x": 1130,
         "y": 720,
         "wires": []
+    },
+    {
+        "id": "387d9ce5dfe2d597",
+        "type": "json",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 970,
+        "y": 780,
+        "wires": [
+            [
+                "a67614b470d13ce5",
+                "214b272a7fbe98c7"
+            ]
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
