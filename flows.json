@@ -169,8 +169,8 @@
             "e31e0fc5c4dce10e",
             "cd43e5a5af71b3fd"
         ],
-        "x": 34,
-        "y": 879,
+        "x": 94,
+        "y": 919,
         "w": 1532,
         "h": 182
     },
@@ -3918,7 +3918,7 @@
         "y": 780,
         "wires": [
             [
-                "4d989b9847ec219b"
+                "a92b564f771f2512"
             ]
         ]
     },
@@ -4026,7 +4026,7 @@
         "z": "d91ac3d282c069d0",
         "g": "6b7c1f4fbbe77c84",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4062,8 +4062,8 @@
         "g": "b3e051910f2a64ee",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 500,
-        "y": 960,
+        "x": 560,
+        "y": 1000,
         "wires": [
             [
                 "5c36b7b82f2c640c",
@@ -4083,8 +4083,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 960,
+        "x": 380,
+        "y": 1000,
         "wires": [
             [
                 "49948d8554edb4e3"
@@ -4113,8 +4113,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 960,
+        "x": 200,
+        "y": 1000,
         "wires": [
             [
                 "70036d189377757b"
@@ -4134,8 +4134,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 1020,
+        "x": 770,
+        "y": 1060,
         "wires": []
     },
     {
@@ -4154,8 +4154,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 990,
-        "y": 960,
+        "x": 1050,
+        "y": 1000,
         "wires": [
             [
                 "37c20ef96deec730",
@@ -4177,8 +4177,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1290,
-        "y": 920,
+        "x": 1350,
+        "y": 960,
         "wires": []
     },
     {
@@ -4207,8 +4207,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 960,
+        "x": 760,
+        "y": 1000,
         "wires": [
             [
                 "66ddce359e5ff10c",
@@ -4231,8 +4231,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 920,
+        "x": 930,
+        "y": 960,
         "wires": []
     },
     {
@@ -4246,8 +4246,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 1330,
-        "y": 980,
+        "x": 1390,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -4265,8 +4265,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 950,
-        "y": 1020,
+        "x": 1010,
+        "y": 1060,
         "wires": []
     },
     {
@@ -4326,7 +4326,7 @@
         "z": "d91ac3d282c069d0",
         "g": "65c598bb5234d69b",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4337,6 +4337,25 @@
         "x": 940,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "a92b564f771f2512",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\n\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 780,
+        "wires": [
+            [
+                "4d989b9847ec219b"
+            ]
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
