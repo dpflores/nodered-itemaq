@@ -4371,7 +4371,7 @@
         "z": "d91ac3d282c069d0",
         "g": "a5bc3a1930f09c8f",
         "name": "",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nreturn msg;\n\n",
+        "func": "var array_in = msg.payload;\nvar data_out = [];\n\n\ndata_out = JSON.parse(msg.payload[0].data);\n\n\nmsg.payload = data_out;\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
