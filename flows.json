@@ -4238,7 +4238,7 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "// function myFunction(value, index){\n//     msg.payload[index] = value.data;\n// }\n// msg.payload.forEach(myFunction);\n\n// return msg;\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.headers = [\"gateway_key\", \"timestamp\"];\nreturn msg;",
+        "func": "// function myFunction(value, index){\n//     msg.payload[index] = value.data;\n// }\n// msg.payload.forEach(myFunction);\n\n// return msg;\n\n\nvar array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.headers = \"gateway_key, timestamp\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
