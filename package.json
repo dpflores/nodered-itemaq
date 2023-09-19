@@ -2,7 +2,9 @@
     "name": "itemaq_angle",
     "description": "sistema de angulamiento para la empresa itemaq",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-flatter": "1.1.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
