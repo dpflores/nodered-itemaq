@@ -4024,7 +4024,7 @@
         "type": "json-2-csv",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "x": 1280,
+        "x": 1200,
         "y": 780,
         "wires": [
             [
@@ -4037,7 +4037,7 @@
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4233,7 +4233,7 @@
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4257,9 +4257,49 @@
         "wires": [
             [
                 "a67614b470d13ce5",
-                "214b272a7fbe98c7"
+                "214b272a7fbe98c7",
+                "2b0824d22b77546e"
             ]
         ]
+    },
+    {
+        "id": "2b0824d22b77546e",
+        "type": "csv",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1170,
+        "y": 840,
+        "wires": [
+            [
+                "6b64aa06297ecde1"
+            ]
+        ]
+    },
+    {
+        "id": "6b64aa06297ecde1",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 840,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
