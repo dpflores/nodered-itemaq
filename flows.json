@@ -5265,8 +5265,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1030,
-        "y": 260,
+        "x": 1070,
+        "y": 300,
         "wires": [
             [],
             [],
@@ -5310,7 +5310,8 @@
                 "858d5683e6a12e0d"
             ],
             [
-                "411b82cd9be62670"
+                "411b82cd9be62670",
+                "db0b1bc84cd5aa97"
             ]
         ]
     },
@@ -5382,6 +5383,26 @@
                 "3b41906495a76b75",
                 "8280a977f37e7427"
             ]
+        ]
+    },
+    {
+        "id": "db0b1bc84cd5aa97",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "umount /media/USB",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 460,
+        "y": 600,
+        "wires": [
+            [],
+            [],
+            []
         ]
     },
     {
