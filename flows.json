@@ -171,7 +171,7 @@
         ],
         "x": 74,
         "y": 939,
-        "w": 1532,
+        "w": 1492,
         "h": 202
     },
     {
@@ -4231,7 +4231,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1330,
+        "x": 1210,
         "y": 1000,
         "wires": []
     },
@@ -4277,7 +4277,7 @@
         "z": "d91ac3d282c069d0",
         "g": "b3e051910f2a64ee",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4300,8 +4300,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 1370,
-        "y": 1060,
+        "x": 1330,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -4312,7 +4312,7 @@
         "z": "d91ac3d282c069d0",
         "g": "b3e051910f2a64ee",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4573,7 +4573,7 @@
         "z": "d91ac3d282c069d0",
         "g": "1a0d550707f8cc4f",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4582,6 +4582,40 @@
         "statusType": "auto",
         "x": 790,
         "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "1ffa16d9fde7d74a",
+        "type": "ping",
+        "z": "d91ac3d282c069d0",
+        "protocol": "Automatic",
+        "mode": "timed",
+        "name": "",
+        "host": "161.132.39.167",
+        "timer": "5",
+        "inputs": 0,
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "1025356135ad026c"
+            ]
+        ]
+    },
+    {
+        "id": "1025356135ad026c",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 520,
         "wires": []
     },
     {
