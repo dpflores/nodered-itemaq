@@ -169,10 +169,10 @@
             "e31e0fc5c4dce10e",
             "cd43e5a5af71b3fd"
         ],
-        "x": 14,
+        "x": 74,
         "y": 939,
         "w": 1532,
-        "h": 182
+        "h": 202
     },
     {
         "id": "a5bc3a1930f09c8f",
@@ -4096,8 +4096,8 @@
         "g": "b3e051910f2a64ee",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 480,
-        "y": 1020,
+        "x": 540,
+        "y": 1040,
         "wires": [
             [
                 "5c36b7b82f2c640c",
@@ -4117,8 +4117,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 1020,
+        "x": 360,
+        "y": 1040,
         "wires": [
             [
                 "49948d8554edb4e3"
@@ -4147,8 +4147,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 1020,
+        "x": 180,
+        "y": 1040,
         "wires": [
             [
                 "70036d189377757b"
@@ -4168,8 +4168,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 1080,
+        "x": 750,
+        "y": 1100,
         "wires": []
     },
     {
@@ -4188,8 +4188,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 970,
-        "y": 1020,
+        "x": 1030,
+        "y": 1040,
         "wires": [
             [
                 "37c20ef96deec730",
@@ -4211,8 +4211,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1270,
-        "y": 980,
+        "x": 1330,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4234,15 +4234,15 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "g": "b3e051910f2a64ee",
-        "name": "",
+        "name": "Procesar array para csv",
         "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n\n    // Converting simple timestamp to human readable\n    // time\n    array_out[i].timestamp = unixTimestampToHumanReadable(array_out[i].timestamp);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n\n\n\n// Function for timestamp to readable time\nfunction unixTimestampToHumanReadable(unixTimestamp) {\n    const date = new Date(unixTimestamp);\n    const year = date.getFullYear();\n    const month = (date.getMonth() + 1).toString().padStart(2, '0');\n    const day = date.getDate().toString().padStart(2, '0');\n    const hours = date.getHours().toString().padStart(2, '0');\n    const minutes = date.getMinutes().toString().padStart(2, '0');\n    const seconds = date.getSeconds().toString().padStart(2, '0');\n\n    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 1020,
+        "x": 790,
+        "y": 1040,
         "wires": [
             [
                 "66ddce359e5ff10c",
@@ -4265,7 +4265,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 850,
+        "x": 1010,
         "y": 980,
         "wires": []
     },
@@ -4280,8 +4280,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "utf8",
-        "x": 1310,
-        "y": 1040,
+        "x": 1370,
+        "y": 1060,
         "wires": [
             []
         ]
@@ -4299,8 +4299,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 1080,
+        "x": 1010,
+        "y": 1100,
         "wires": []
     },
     {
