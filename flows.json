@@ -4248,7 +4248,6 @@
         "y": 820,
         "wires": [
             [
-                "8ae32a670c8e9ddf",
                 "53ba20d09098fb1a"
             ]
         ]
@@ -4262,7 +4261,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "columns",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 1150,
@@ -4284,7 +4284,8 @@
         "y": 820,
         "wires": [
             [
-                "2b0824d22b77546e"
+                "2b0824d22b77546e",
+                "8ae32a670c8e9ddf"
             ]
         ]
     },
