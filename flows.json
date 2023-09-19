@@ -132,7 +132,7 @@
         "id": "65c598bb5234d69b",
         "type": "group",
         "z": "d91ac3d282c069d0",
-        "name": "Guardado de data sin internet",
+        "name": "Guardado de data offline",
         "style": {
             "label": true,
             "color": "#000000"
@@ -3845,7 +3845,9 @@
         "x": 150,
         "y": 220,
         "wires": [
-            []
+            [
+                "bbdfb97bf5cbeab2"
+            ]
         ]
     },
     {
