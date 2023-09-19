@@ -3959,7 +3959,7 @@
         "z": "d91ac3d282c069d0",
         "g": "a5bc3a1930f09c8f",
         "name": "obtener primer dato",
-        "func": "\n\nmsg.topic = \"SELECT * FROM offline_data LIMIT 1\";\n// El siguiente query, obtiene el primer dato y \n// elimina este mismo dato\n\nmsg.topic = \"SELECT * FROM offline_data LIMIT 1;\";\nreturn msg;",
+        "func": "\n\nmsg.topic = \"SELECT data FROM offline_data LIMIT 1\";\n// El siguiente query, obtiene el primer dato y \n// elimina este mismo dato\n\nmsg.topic = \"SELECT data FROM offline_data LIMIT 1;\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
