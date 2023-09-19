@@ -175,6 +175,28 @@
         "h": 182
     },
     {
+        "id": "a5bc3a1930f09c8f",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "Recuperar y enviar la data adquirida offline",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "89c8205089453bdc",
+            "f744467ba4084a45",
+            "4d989b9847ec219b",
+            "5c5e2e73dfc922b1",
+            "a92b564f771f2512",
+            "45c703090ffad7f3"
+        ],
+        "x": 94,
+        "y": 659,
+        "w": 992,
+        "h": 142
+    },
+    {
         "id": "f9b436a0d5058759",
         "type": "serial-port",
         "serialport": "/dev/ttyUSB1",
@@ -3912,13 +3934,15 @@
         "id": "89c8205089453bdc",
         "type": "mysql",
         "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
         "mydb": "45598baf2af77f76",
         "name": "",
         "x": 580,
-        "y": 780,
+        "y": 760,
         "wires": [
             [
-                "a92b564f771f2512"
+                "a92b564f771f2512",
+                "45c703090ffad7f3"
             ]
         ]
     },
@@ -3926,6 +3950,7 @@
         "id": "f744467ba4084a45",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
         "name": "",
         "func": "\nmsg.topic = \"SELECT * FROM offline_data\";\n\nreturn msg;",
         "outputs": 1,
@@ -3934,7 +3959,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 780,
+        "y": 760,
         "wires": [
             [
                 "89c8205089453bdc"
@@ -3945,6 +3970,7 @@
         "id": "4d989b9847ec219b",
         "type": "debug",
         "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -3954,13 +3980,14 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 970,
-        "y": 780,
+        "y": 760,
         "wires": []
     },
     {
         "id": "5c5e2e73dfc922b1",
         "type": "inject",
         "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
         "name": "",
         "props": [
             {
@@ -3979,7 +4006,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 200,
-        "y": 780,
+        "y": 760,
         "wires": [
             [
                 "f744467ba4084a45"
@@ -4342,20 +4369,38 @@
         "id": "a92b564f771f2512",
         "type": "function",
         "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
         "name": "",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\n\n\nreturn msg;\n\n",
+        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 780,
+        "y": 760,
         "wires": [
             [
                 "4d989b9847ec219b"
             ]
         ]
+    },
+    {
+        "id": "45c703090ffad7f3",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "g": "a5bc3a1930f09c8f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 700,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
