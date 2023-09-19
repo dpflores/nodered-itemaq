@@ -4247,8 +4247,26 @@
         "x": 800,
         "y": 820,
         "wires": [
-            []
+            [
+                "66ddce359e5ff10c"
+            ]
         ]
+    },
+    {
+        "id": "66ddce359e5ff10c",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 780,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
