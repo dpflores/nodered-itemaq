@@ -4190,7 +4190,7 @@
         "hdrout": "none",
         "multi": "one",
         "ret": "\\n",
-        "temp": "",
+        "temp": "a,b,c,d,e,f",
         "skip": "0",
         "strings": true,
         "include_empty_strings": "",
