@@ -4190,7 +4190,7 @@
         "hdrout": "none",
         "multi": "one",
         "ret": "\\n",
-        "temp": "{{msg.headers}}",
+        "temp": "gateway_key, timestamp",
         "skip": "0",
         "strings": true,
         "include_empty_strings": "",
