@@ -4293,7 +4293,7 @@
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
