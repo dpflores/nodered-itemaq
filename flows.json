@@ -4507,7 +4507,7 @@
         "z": "d91ac3d282c069d0",
         "g": "1a0d550707f8cc4f",
         "name": "",
-        "func": "msg.topic = \"DELETE FROM offline WHERE fecha < DATEADD(DAY, -70, GETDATE());\";\nreturn msg;",
+        "func": "msg.topic = \"DELETE FROM offline_data WHERE fecha < DATEADD(DAY, -70, GETDATE());\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
