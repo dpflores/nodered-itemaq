@@ -4483,6 +4483,66 @@
         ]
     },
     {
+        "id": "3e80e2e1aef47e06",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "func": "msg.topic = \"DELETE FROM offline WHERE fecha < DATEADD(DAY, -70, GETDATE());\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1280,
+        "wires": [
+            [
+                "58836c8d2ead4daa"
+            ]
+        ]
+    },
+    {
+        "id": "58836c8d2ead4daa",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 580,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60716de1fbc60246",
+        "type": "inject",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "59 23 * * 5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1280,
+        "wires": [
+            [
+                "3e80e2e1aef47e06"
+            ]
+        ]
+    },
+    {
         "id": "62e4bcbf75a77da1",
         "type": "debug",
         "z": "a1b1f2bdd5b2d11d",
