@@ -4198,7 +4198,7 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "msg.payload = msg.payload[0]\nreturn msg;",
+        "func": "msg.payload = msg.payload[0].data\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
