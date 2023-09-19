@@ -4195,11 +4195,12 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1190,
+        "x": 1090,
         "y": 820,
         "wires": [
             [
-                "37c20ef96deec730"
+                "37c20ef96deec730",
+                "e31e0fc5c4dce10e"
             ]
         ]
     },
@@ -4269,6 +4270,22 @@
         "x": 970,
         "y": 780,
         "wires": []
+    },
+    {
+        "id": "e31e0fc5c4dce10e",
+        "type": "file",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "filename": "/root/ITEMAQ/ANGULAMIENTO/data.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1380,
+        "y": 880,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "62e4bcbf75a77da1",
