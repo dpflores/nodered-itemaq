@@ -4319,7 +4319,9 @@
         "x": 1070,
         "y": 780,
         "wires": [
-            []
+            [
+                "f06d63ec5faac2f8"
+            ]
         ]
     },
     {
@@ -4334,6 +4336,22 @@
                 "214b272a7fbe98c7"
             ]
         ]
+    },
+    {
+        "id": "f06d63ec5faac2f8",
+        "type": "debug",
+        "z": "d91ac3d282c069d0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 760,
+        "wires": []
     },
     {
         "id": "62e4bcbf75a77da1",
