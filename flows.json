@@ -3918,8 +3918,7 @@
         "y": 780,
         "wires": [
             [
-                "4d989b9847ec219b",
-                "16cf2d6aee4645cb"
+                "4d989b9847ec219b"
             ]
         ]
     },
@@ -3928,7 +3927,7 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "\nmsg.topic = \"SELECT fecha, angle, gps_lat, gps_lon, speed, state FROM data LIMIT 10\";\n\nreturn msg;",
+        "func": "\nmsg.topic = \"SELECT * FROM offline_data\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3947,7 +3946,7 @@
         "type": "debug",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3985,23 +3984,6 @@
             [
                 "f744467ba4084a45"
             ]
-        ]
-    },
-    {
-        "id": "16cf2d6aee4645cb",
-        "type": "function",
-        "z": "d91ac3d282c069d0",
-        "name": "",
-        "func": "msg.payload\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 793.3333129882812,
-        "y": 738.8888549804688,
-        "wires": [
-            []
         ]
     },
     {
