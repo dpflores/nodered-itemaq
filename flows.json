@@ -4238,7 +4238,7 @@
         "type": "function",
         "z": "d91ac3d282c069d0",
         "name": "",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]);\n\nmsg.columns = \"gateway_key, timestamp\"\n\nreturn msg;",
+        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n// msg.columns = \"gateway_key, timestamp\"\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
