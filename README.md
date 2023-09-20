@@ -13,8 +13,9 @@ port: 3306
 
 ### nodered encryption key
 
+```
 $ACME_INTERNAL_PASS
-
+```
 ### requerimientos
 ```
 sudo apt-get install libudev-dev
