@@ -10,3 +10,9 @@ password: $ACME_INTERNAL_PASS
 database: angulamiento
 port: 3306
 ```
+
+### requerimientos
+```
+sudo apt-get install libudev-dev
+
+```
