@@ -19,5 +19,5 @@ $ACME_INTERNAL_PASS
 ### requerimientos
 ```
 sudo apt-get install libudev-dev
-
+sudo apt-get install speedtest-cli
 ```
