@@ -82,7 +82,7 @@
     {
         "id": "ac1b7f858f654d07",
         "type": "tab",
-        "label": "CONNECTIVITY",
+        "label": "CONNECTIVITY & MONITORING",
         "disabled": false,
         "info": "",
         "env": []
@@ -242,10 +242,14 @@
             "969b2948e1ba5ece",
             "ee185204f3df637f",
             "30361390301119e6",
-            "369a679a146cb309"
+            "369a679a146cb309",
+            "48fe66a37a5d4455",
+            "47371280d37afc93"
         ],
-        "x": 54,
-        "y": 79
+        "x": 74,
+        "y": 79,
+        "w": 1212,
+        "h": 242
     },
     {
         "id": "b7f9bad1da3f666b",
@@ -266,7 +270,9 @@
             "227c7884566505e1"
         ],
         "x": 54,
-        "y": 299
+        "y": 359,
+        "w": 1072,
+        "h": 182
     },
     {
         "id": "f9b436a0d5058759",
@@ -3881,7 +3887,7 @@
                 "t": "set",
                 "p": "gateway_data",
                 "pt": "global",
-                "to": "{\"gateway_key\":\"AXO001\",\"timestamp\":0,\"data\":{\"gps\":{\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0},\"jd2120\":{\"angle\":0},\"sensor_estado\":{\"state\":\"init\"}}}",
+                "to": "{\"gateway_key\":\"AXO001\",\"timestamp\":0,\"data\":{\"gateway_info\":{\"eth_ip\":\"-\",\"ping_acme\":\"-\",\"total_space\":0,\"used_space\":0,\"used_space_percent\":0,\"free_space\":0,\"num_gps_sat\":0,\"memory_usage_percent\":0,\"temperature\":0},\"gps\":{\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"accuracy\":0,\"num_sat\":0},\"jd2120\":{\"angle\":0},\"sensor_estado\":{\"state\":\"init\"}}}",
                 "tot": "json"
             }
         ],
@@ -3910,7 +3916,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 550,
+        "x": 590,
         "y": 40,
         "wires": []
     },
@@ -3929,7 +3935,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -3991,7 +3997,7 @@
         "z": "d91ac3d282c069d0",
         "g": "3e6cdd9658d4b98d",
         "name": "debug 119",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -4985,7 +4991,7 @@
         "type": "debug",
         "z": "87fe75fba6b00d60",
         "name": "debug 110",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5047,7 +5053,7 @@
                 "d9359ec226f5a587",
                 "773046d3e8439af1",
                 "e79dd601cc9c793f",
-                "7d7cb1a0abb407a4"
+                "28a64d7c7b708ed3"
             ]
         ]
     },
@@ -5252,7 +5258,7 @@
         "type": "debug",
         "z": "87fe75fba6b00d60",
         "name": "debug 112",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5260,8 +5266,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1150,
-        "y": 440,
+        "x": 1210,
+        "y": 540,
         "wires": []
     },
     {
@@ -5279,7 +5285,7 @@
         "type": "debug",
         "z": "87fe75fba6b00d60",
         "name": "debug 121",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -5421,6 +5427,77 @@
         "reg": false,
         "x": 1360,
         "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28a64d7c7b708ed3",
+        "type": "function",
+        "z": "87fe75fba6b00d60",
+        "name": "numero de satelites",
+        "func": "msg.payload = msg.payload.numSat;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            [
+                "7d7cb1a0abb407a4",
+                "b253103a13d4e225",
+                "b32165e61e3af597"
+            ]
+        ]
+    },
+    {
+        "id": "b253103a13d4e225",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gps.num_sat",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b32165e61e3af597",
+        "type": "change",
+        "z": "87fe75fba6b00d60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.num_gps_sat",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1530,
+        "y": 500,
         "wires": [
             []
         ]
@@ -13154,8 +13231,8 @@
         "host": "161.132.39.167",
         "timer": "5",
         "inputs": 0,
-        "x": 160,
-        "y": 160,
+        "x": 180,
+        "y": 180,
         "wires": [
             [
                 "969b2948e1ba5ece"
@@ -13182,11 +13259,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 120,
+        "x": 620,
+        "y": 140,
         "wires": [
             [
-                "30361390301119e6"
+                "30361390301119e6",
+                "48fe66a37a5d4455"
             ]
         ]
     },
@@ -13211,8 +13289,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 370,
-        "y": 160,
+        "x": 390,
+        "y": 180,
         "wires": [
             [
                 "dbaf8b3efeaabf37"
@@ -13242,11 +13320,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 610,
-        "y": 200,
+        "x": 630,
+        "y": 220,
         "wires": [
             [
-                "369a679a146cb309"
+                "369a679a146cb309",
+                "47371280d37afc93"
             ]
         ]
     },
@@ -13256,7 +13335,7 @@
         "z": "ac1b7f858f654d07",
         "g": "39ddbe85a72ee0b3",
         "name": "Latencia servidor Acme",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -13264,7 +13343,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 990,
+        "x": 1010,
         "y": 120,
         "wires": []
     },
@@ -13274,7 +13353,7 @@
         "z": "ac1b7f858f654d07",
         "g": "39ddbe85a72ee0b3",
         "name": "Not connected",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13282,8 +13361,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 200,
+        "x": 980,
+        "y": 240,
         "wires": []
     },
     {
@@ -13298,7 +13377,7 @@
         "timer": "5",
         "inputs": 0,
         "x": 160,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "a25ce97d8a1e53e6"
@@ -13326,7 +13405,7 @@
         "to": "",
         "reg": false,
         "x": 600,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "594f458e05d10cbd"
@@ -13355,7 +13434,7 @@
         "repair": false,
         "outputs": 2,
         "x": 370,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "f884311d2c1d9673"
@@ -13386,7 +13465,7 @@
         "to": "",
         "reg": false,
         "x": 600,
-        "y": 420,
+        "y": 480,
         "wires": [
             [
                 "0108dea861a38364"
@@ -13399,7 +13478,7 @@
         "z": "ac1b7f858f654d07",
         "g": "b7f9bad1da3f666b",
         "name": "Latencia servidor VPN",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -13408,7 +13487,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 980,
-        "y": 340,
+        "y": 400,
         "wires": []
     },
     {
@@ -13417,7 +13496,7 @@
         "z": "ac1b7f858f654d07",
         "g": "b7f9bad1da3f666b",
         "name": "Not connected",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13426,7 +13505,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 960,
-        "y": 420,
+        "y": 480,
         "wires": []
     },
     {
@@ -13491,7 +13570,673 @@
         "name": "falta corregir la IP maestra del VPN",
         "info": "",
         "x": 220,
-        "y": 440,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "48fe66a37a5d4455",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "g": "39ddbe85a72ee0b3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.ping_acme",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47371280d37afc93",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "g": "39ddbe85a72ee0b3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.ping_acme",
+                "pt": "global",
+                "to": "not connected",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9cde978afbb363d",
+        "type": "inject",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 620,
+        "wires": [
+            [
+                "881fd3c483db04a9",
+                "5611ce40d44b863a",
+                "cc44bd7818012c3e",
+                "859dde0a440deb3d",
+                "da42eb0b5eb1cf98",
+                "bf0eb595da64b68b",
+                "daca6e4fef23766a"
+            ]
+        ]
+    },
+    {
+        "id": "881fd3c483db04a9",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(hostname -I | awk '{print $1}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "80755401e99146fb"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "80755401e99146fb",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.eth_ip",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5611ce40d44b863a",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(df -h --total | grep /dev/root | awk '{print$2}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "8931face9461a432"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cc44bd7818012c3e",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(df -h --total | grep /dev/root | awk '{print$3}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "6e6ed535dc218ae7"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "859dde0a440deb3d",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(df -h --total | grep /dev/root | awk '{print$4}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 480,
+        "y": 840,
+        "wires": [
+            [
+                "9c3013b28a9565d1"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8931face9461a432",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.total_space",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e6ed535dc218ae7",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.used_space",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c3013b28a9565d1",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.free_space",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da42eb0b5eb1cf98",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(df -h --total | grep /dev/root | awk '{print$5}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 480,
+        "y": 900,
+        "wires": [
+            [
+                "078126b863f90a30"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "078126b863f90a30",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.used_space_percent",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf0eb595da64b68b",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(free | grep Mem: | awk '{print$3/$2*100}')",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 470,
+        "y": 1020,
+        "wires": [
+            [
+                "f42d877d0d4b7a77"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f42d877d0d4b7a77",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.memory_usage_percent",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "daca6e4fef23766a",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "command": "echo -n $(vcgencmd measure_temp)",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 430,
+        "y": 1100,
+        "wires": [
+            [
+                "a62d96489e8eb651"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6e5bce5ba042c84c",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.temperature",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a62d96489e8eb651",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$substring(payload,5,4)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 1100,
+        "wires": [
+            [
+                "6e5bce5ba042c84c"
+            ]
+        ]
+    },
+    {
+        "id": "93581f2a0b502758",
+        "type": "exec",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "command": "speedtest-cli --simple --secure",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 410,
+        "y": 1200,
+        "wires": [
+            [
+                "f1de9b1aed5f2e0e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f1de9b1aed5f2e0e",
+        "type": "split",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 690,
+        "y": 1200,
+        "wires": [
+            [
+                "6c7fb87e581a434e",
+                "0581f6cf6f24eaef"
+            ]
+        ]
+    },
+    {
+        "id": "6c7fb87e581a434e",
+        "type": "debug",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "0581f6cf6f24eaef",
+        "type": "switch",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 890,
+        "y": 1200,
+        "wires": [
+            [
+                "8f37898dbbb551a5"
+            ],
+            [
+                "0465430fc5acd53e"
+            ],
+            [
+                "a63b7998cf19828d"
+            ]
+        ]
+    },
+    {
+        "id": "8f37898dbbb551a5",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.ping_internet",
+                "pt": "global",
+                "to": "$substring(payload, 6, 9)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0465430fc5acd53e",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.download",
+                "pt": "global",
+                "to": "$substring(payload, 10, 12)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a63b7998cf19828d",
+        "type": "change",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data.data.gateway_info.upload",
+                "pt": "global",
+                "to": "$substring(payload, 10, 12)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b894d27ce548b6b6",
+        "type": "inject",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1200,
+        "wires": [
+            [
+                "93581f2a0b502758"
+            ]
+        ]
+    },
+    {
+        "id": "a866e060f2779308",
+        "type": "comment",
+        "z": "ac1b7f858f654d07",
+        "d": true,
+        "name": "Not recommended, affects server connection",
+        "info": "",
+        "x": 430,
+        "y": 1260,
         "wires": []
     }
 ]
