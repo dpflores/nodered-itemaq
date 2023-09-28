@@ -2,12 +2,12 @@ FROM nodered/node-red
 
 # Copy package.json to the WORKDIR so npm builds all
 # of your added nodes modules for Node-RED
-COPY package.json .
-RUN npm config get proxy
-RUN npm config rm proxy
-RUN npm config rm https-proxy
+# COPY package.json .
+# RUN npm config get proxy
+# RUN npm config rm proxy
+# RUN npm config rm https-proxy
 # RUN npm config set registry http://registry.npmjs.org/
-RUN npm install --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict
+# RUN npm install --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict
 #--only=production
 
 # Copy _your_ Node-RED project files into place
