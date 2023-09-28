@@ -1,7 +1,7 @@
 {
     "scripts": {
         "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
-    }
+    },
     "name": "itemaq_angle",
     "description": "sistema de angulamiento para la empresa itemaq",
     "version": "0.0.1",
