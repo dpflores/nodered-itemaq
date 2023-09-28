@@ -7,7 +7,7 @@ RUN npm config get proxy
 RUN npm config rm proxy
 RUN npm config rm https-proxy
 # RUN npm config set registry http://registry.npmjs.org/
-RUN npm install --unsafe-perm --no-update-notifier --no-fund 
+RUN npm install --no-audit --no-update-notifier --no-fund --save --save-prefix=~ --production --engine-strict
 #--only=production
 
 # Copy _your_ Node-RED project files into place
