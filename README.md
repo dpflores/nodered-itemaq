@@ -3,6 +3,10 @@ itemaq_angle
 
 sistema de angulamiento para la empresa itemaq
 
+### Access db
+```
+ssh 3308:localhost:3306 root@192.168.82.200
+```
 ### db credentials
 ```
 user: acme
