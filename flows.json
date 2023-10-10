@@ -159,7 +159,9 @@
             "47371280d37afc93"
         ],
         "x": 74,
-        "y": 79
+        "y": 79,
+        "w": 1212,
+        "h": 242
     },
     {
         "id": "b7f9bad1da3f666b",
@@ -180,7 +182,9 @@
             "227c7884566505e1"
         ],
         "x": 54,
-        "y": 359
+        "y": 359,
+        "w": 1072,
+        "h": 182
     },
     {
         "id": "f2e2e6faa602b3b4",
@@ -280,6 +284,24 @@
         "y": 1439,
         "w": 932,
         "h": 142
+    },
+    {
+        "id": "1d1b1c227a0bc262",
+        "type": "group",
+        "z": "d91ac3d282c069d0",
+        "name": "DELETE ALL DATA MANUALLY (CAREFULL)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "545927d79126b532",
+            "75f4430f63d837a1",
+            "0c617771a3bf80f9"
+        ],
+        "x": 94,
+        "y": 2359,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "8d53d2f17df7fbc4",
@@ -1106,6 +1128,7 @@
         "name": "function 103",
         "func": "var data_json = global.get('gateway_data');\ndata_json.timestamp = msg.payload;\nmsg.payload = data_json;\n\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1133,7 +1156,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "5",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -1178,7 +1201,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "5",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -1765,6 +1788,70 @@
         "x": 1635,
         "y": 1300,
         "wires": []
+    },
+    {
+        "id": "545927d79126b532",
+        "type": "inject",
+        "z": "d91ac3d282c069d0",
+        "g": "1d1b1c227a0bc262",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 2400,
+        "wires": [
+            [
+                "75f4430f63d837a1"
+            ]
+        ]
+    },
+    {
+        "id": "75f4430f63d837a1",
+        "type": "function",
+        "z": "d91ac3d282c069d0",
+        "g": "1d1b1c227a0bc262",
+        "name": "DELETE ALL",
+        "func": "\nmsg.topic = `\n  DELETE FROM local_data;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 2400,
+        "wires": [
+            [
+                "0c617771a3bf80f9"
+            ]
+        ]
+    },
+    {
+        "id": "0c617771a3bf80f9",
+        "type": "mysql",
+        "z": "d91ac3d282c069d0",
+        "g": "1d1b1c227a0bc262",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 580,
+        "y": 2400,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "d660d717a9bffefc",
@@ -2976,13 +3063,13 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 670,
-        "y": 180,
+        "x": 710,
+        "y": 280,
         "wires": [
             [],
             [],
             [
-                "611c4768cd164731"
+                "7cb1bfa6ee14cd59"
             ]
         ]
     },
@@ -2998,8 +3085,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 840,
-        "y": 380,
+        "x": 880,
+        "y": 480,
         "wires": [
             [],
             [],
@@ -3026,8 +3113,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 460,
-        "y": 180,
+        "x": 500,
+        "y": 280,
         "wires": [
             [
                 "0fa85570732327d9"
@@ -3051,12 +3138,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 460,
-        "y": 260,
+        "x": 500,
+        "y": 360,
         "wires": [
             [
-                "24491a42e5626d87",
-                "e6846b59f12b9bf7"
+                "24491a42e5626d87"
             ]
         ]
     },
@@ -3077,8 +3163,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 640,
-        "y": 380,
+        "x": 680,
+        "y": 480,
         "wires": [
             [
                 "908fa73116dffd7a"
@@ -3097,8 +3183,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 370,
-        "y": 100,
+        "x": 510,
+        "y": 180,
         "wires": [
             [],
             [],
@@ -3117,8 +3203,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1290,
-        "y": 480,
+        "x": 1390,
+        "y": 660,
         "wires": [
             [],
             [],
@@ -3139,8 +3225,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 400,
-        "y": 500,
+        "x": 440,
+        "y": 600,
         "wires": [
             [],
             [],
@@ -3150,52 +3236,10 @@
         ]
     },
     {
-        "id": "e6846b59f12b9bf7",
-        "type": "exec",
-        "z": "93c938d261dc36e3",
-        "command": "/root/axotec_scripts/blink_red_led.sh",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 1230,
-        "y": 220,
-        "wires": [
-            [],
-            [],
-            [
-                "3d2593e8c53546bc"
-            ]
-        ]
-    },
-    {
-        "id": "3d2593e8c53546bc",
-        "type": "exec",
-        "z": "93c938d261dc36e3",
-        "command": "echo 1 > /dev/usrled3",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 1200,
-        "y": 140,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "8280a977f37e7427",
         "type": "exec",
         "z": "93c938d261dc36e3",
-        "command": "echo 0 > /dev/usrled3",
+        "command": "echo 0 > /dev/diod3",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -3203,8 +3247,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 900,
-        "y": 780,
+        "x": 950,
+        "y": 980,
         "wires": [
             [],
             [],
@@ -3223,8 +3267,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 900,
-        "y": 700,
+        "x": 960,
+        "y": 860,
         "wires": [
             [],
             [],
@@ -3252,12 +3296,14 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
-        "y": 760,
+        "x": 730,
+        "y": 940,
         "wires": [
             [
                 "3b41906495a76b75",
-                "8280a977f37e7427"
+                "8280a977f37e7427",
+                "a24ecf78cb9c4bcd",
+                "6599757e27dee406"
             ]
         ]
     },
@@ -3273,8 +3319,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1030,
-        "y": 380,
+        "x": 1070,
+        "y": 480,
         "wires": []
     },
     {
@@ -3288,8 +3334,8 @@
             "08ef0af123c7225b",
             "05d8f608fe5eb3a7"
         ],
-        "x": 565,
-        "y": 300,
+        "x": 605,
+        "y": 400,
         "wires": []
     },
     {
@@ -3302,8 +3348,8 @@
             "fa52f9efaa73c12b",
             "4512bff38c8cd675"
         ],
-        "x": 765,
-        "y": 300,
+        "x": 805,
+        "y": 400,
         "wires": [
             [
                 "09f0e4f9549d2ba9"
@@ -3322,8 +3368,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1010,
-        "y": 300,
+        "x": 1030,
+        "y": 400,
         "wires": [
             [],
             [],
@@ -3338,8 +3384,8 @@
         "z": "93c938d261dc36e3",
         "name": "saving csv",
         "info": "",
-        "x": 660,
-        "y": 300,
+        "x": 700,
+        "y": 400,
         "wires": []
     },
     {
@@ -3354,8 +3400,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
-        "y": 600,
+        "x": 870,
+        "y": 700,
         "wires": []
     },
     {
@@ -3370,14 +3416,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 420,
+        "x": 1100,
+        "y": 600,
         "wires": [
             [
-                "af2952fef3c4bb96"
+                "af2952fef3c4bb96",
+                "39db48e634e5f68e"
             ],
             [
-                "5913ac761e735950"
+                "5913ac761e735950",
+                "ca21724456fbfc8b"
             ]
         ]
     },
@@ -3393,8 +3441,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1290,
-        "y": 420,
+        "x": 1390,
+        "y": 560,
         "wires": [
             [],
             [],
@@ -3424,8 +3472,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 620,
-        "y": 440,
+        "x": 660,
+        "y": 540,
         "wires": [
             [
                 "908fa73116dffd7a"
@@ -3444,8 +3492,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1550,
-        "y": 460,
+        "x": 1650,
+        "y": 540,
         "wires": []
     },
     {
@@ -3460,8 +3508,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1570,
-        "y": 540,
+        "x": 1650,
+        "y": 660,
         "wires": []
     },
     {
@@ -3476,8 +3524,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 360,
+        "x": 470,
+        "y": 460,
         "wires": []
     },
     {
@@ -3501,8 +3549,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 200,
+        "x": 220,
+        "y": 300,
         "wires": [
             [
                 "f0909c5883cf2bb5"
@@ -3515,17 +3563,192 @@
         "z": "93c938d261dc36e3",
         "name": "",
         "initialScan": false,
-        "x": 220,
-        "y": 260,
+        "x": 260,
+        "y": 360,
         "wires": [
             [
                 "f0909c5883cf2bb5",
                 "6cae6ebd51676aa2",
-                "b896e77a5281950e"
+                "b896e77a5281950e",
+                "267bd568987c89b8"
             ],
             [
-                "411b82cd9be62670"
+                "411b82cd9be62670",
+                "42e2da368acfdb16"
             ]
+        ]
+    },
+    {
+        "id": "267bd568987c89b8",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 1 > /dev/diod3; echo 0 > /dev/diod2",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 500,
+        "y": 120,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "42e2da368acfdb16",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 0 > /dev/diod3; echo 0 > /dev/diod2",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 360,
+        "y": 660,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "559d7dc0b202b6ec",
+        "type": "comment",
+        "z": "93c938d261dc36e3",
+        "name": "2 es luz verde, 3 es luz roja",
+        "info": "",
+        "x": 870,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a24ecf78cb9c4bcd",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 0 > /dev/diod2",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 950,
+        "y": 800,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6599757e27dee406",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 0 > /dev/diod3",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 950,
+        "y": 1040,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "39db48e634e5f68e",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 0 > /dev/diod3; echo 0 > /dev/diod2",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1380,
+        "y": 520,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ca21724456fbfc8b",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "echo 0 > /dev/diod3; echo 1 > /dev/diod2",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1380,
+        "y": 720,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7cb1bfa6ee14cd59",
+        "type": "function",
+        "z": "93c938d261dc36e3",
+        "name": "",
+        "func": "if (msg.payload.code == 0){\n    node.status({ fill: \"green\", shape: \"dot\", text: \"usb connected\" });\n    return [null, msg];\n    \n}\nelse{\n    node.status({ fill: \"red\", shape: \"ring\", text: \"usb disconnected\" });\n    return [msg, null];\n}\n",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 280,
+        "wires": [
+            [
+                "739dd41c60b23bc3"
+            ],
+            [
+                "611c4768cd164731"
+            ]
+        ]
+    },
+    {
+        "id": "739dd41c60b23bc3",
+        "type": "exec",
+        "z": "93c938d261dc36e3",
+        "command": "/root/axotec_scripts/blink_red_led.sh",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1230,
+        "y": 240,
+        "wires": [
+            [],
+            [],
+            []
         ]
     },
     {
